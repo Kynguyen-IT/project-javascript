@@ -1,0 +1,148 @@
+@font-face {
+  font-family: roboto;
+  src: url(../assets/fonts/Roboto-Regular.ttf);
+}
+
+* {
+  font-family: roboto;
+  font-size: 16px;
+}
+
+
+header {
+  height: 420px;
+  background-size: cover;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0, 0),
+    rgb(197 148 0 / 59%)
+  ),url(../assets/images/bg.jpg) no-repeat 100% 77%;
+  padding-bottom: 5%;
+}
+
+header .nav_bar{
+  height: 70px;
+  padding: 0;
+  text-align: right;
+  margin: 0;
+  transition: 1s;
+}
+
+@media only screen and (max-width: 991px) {
+  header .narbar_collapse {
+    position: absolute;
+      text-align: center;
+      background-color: #ffffffbf;
+      z-index: 999;
+      width: 100%;
+      top: 55px;
+  }
+}
+
+
+header .title_home{
+  color: #343a40;
+  font-size: 22px;
+  text-decoration: none !important;
+}
+
+header .title_home:hover {
+  color: #e0a800 !important;
+}
+
+header .nav_link{
+  font-size: 18px;
+  color: #343a40 !important;
+}
+
+header .nav_link:hover, .nav_link:active {
+  color: #e0a800 !important;
+}
+
+/* header .numberCircle {
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 12px;
+  padding: 2px;
+  background: #ffc107;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 2px;
+  right: 139px;
+} */
+
+header .box-text {
+  display: flex;
+  width: 60%;
+  flex-direction: column;
+  margin: 0 auto;
+  justify-content: space-between;
+  height: 250px;
+  margin-top: 5%;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+
+  header .box-text{
+    height: 290px !important;
+  }
+
+  header .title_box-text{
+    font-size:40px !important;
+  }
+  
+  header .text_box-text{
+    font-size:16px !important;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  header .title_box-text{
+    font-size:40px !important;
+  }
+  
+  header .text_box-text{
+    font-size:16px !important;
+  }
+}
+
+@media only screen and (max-width: 487px) {
+  header .title_box-text{
+    font-size:36px !important;
+  }
+  
+  header .text_box-text{
+    font-size:12px !important;
+  }
+
+}
+
+
+
+@media only screen and (max-width: 385px) {
+  header .title_box-text{
+    font-size:31px !important;
+  }
+  
+}
+header .title_box-text{
+  font-size:50px;
+  font-weight: 600;
+}
+
+header .text_box-text{
+  font-size:22px;
+}
+
+header .btn_box-text{
+  display: block;
+  margin: 0 auto;
+  background-color: #fd7e14;
+  border-color: #fd7e14;
+  color: #fff;
+}
+
+
