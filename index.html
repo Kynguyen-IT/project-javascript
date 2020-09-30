@@ -24,7 +24,17 @@
               <a class="nav-link active nav_link" href="#">Home <span class="sr-only">(current)</span></a>
               <a class="nav-link nav_link" href="#">Cart <span class="badge badge-secondary numberCircle">0</span> </a>
               <a class="nav-link nav_link" href="#">Contact</a>
-              <a class="nav-link nav_link" href="./component/login/login.html" >Login</a>
+              <a class="nav-link nav_link" id="login" href="./login" >Login</a>
+              <div id="dropDown"  class="dropdown show">
+                <a id="dropDown_link" class="nav-link btn dropdown-toggle dropdown_toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  Dropdown link
+                </a>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                  <a class="dropdown-item" href="#">Profile</a>
+                  <a class="dropdown-item" href="#">Admin</a>
+                  <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
+                </div>
+              </div>
             </div>
           </div>
         </nav>
@@ -36,10 +46,24 @@
         </div>
       </div>
     </header>
+    <main>
+      <div class="container">
+        <h2 class="title_main">Fooddy</h2>
+        <div id="list_product" class="row">
+        </div>
+      
+        <nav  aria-label="Page navigation" class="pagination_box">
+          <ul id="pagination" class="pagination">
+            
+          </ul>
+        </nav>
+     
+    </main>
   </div>
 
   <script src="./style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
   <script src="./style/bootstrap/js/popper.min.js"></script>
   <script src="./style/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./main.js"></script>
 </body>
 </html>

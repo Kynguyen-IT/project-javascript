@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./login.css"/>
+    <link rel="stylesheet" href="../.././style/reset.css"/>
+    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../.././style/animate.css"/>
+    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css"/>
+  <title>Fooddy</title>
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row container_page">
+            <div class="col-lg-8 col-sm-6  col_left">
+            </div>
+            <div class="col-lg-4 col-sm-6 col_right">
+                <div class="login_box">
+                    <h3 class="title">Login</h3>
+                    <form id="form">
+                      <div class="form-group form_group">
+                        <label for="exampleInputEmail1 ">Email</label>
+                        <input type="email" class="form-control input_w" id="email" placeholder="Email" aria-describedby="emailHelp">
+                        <i class="fas fa-check-circle icon_fas"></i>
+                        <i class="fas fa-exclamation-circle icon_fas"></i>
+                        <small class="message_input">Error Message</small>
+                      </div>
+
+                      <div class="form-group form_group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <input type="password" class="form-control input_w" id="password" placeholder="Password">
+                        <i class="fas fa-check-circle icon_fas"></i>
+                        <i class="fas fa-exclamation-circle icon_fas"></i>
+                        <small class="message_input">Error Message</small>
+                      </div>  
+                      <span id="error_login" class="text-danger error_login">Email or password is incorrect, please re-enter</span>         
+                        <button type="submit" class="btn btn-primary btn_login">Login</button>
+                      </form>
+                      <span class="text">
+                        Do not have an account? Register <a class="register" href="../register">here..</a></span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+  <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="../../style/bootstrap/js/popper.min.js"></script>
+  <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
+  <script src="./login.js"></script>
+</body>
+</html>

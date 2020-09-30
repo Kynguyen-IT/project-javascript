@@ -1,0 +1,395 @@
+{
+  "users": [
+    {
+      "id": "123dshbjf",
+      "email": "ky.nguyenq@gmail.com",
+      "password": "12345",
+      "etpassword": "1234567"
+    },
+    {
+      "id": "ajdhbasjkd",
+      "email": "huy@gmail.com",
+      "password": "1234567",
+      "etpassword": "1234567"
+    },
+    {
+      "id": "aduasiuid",
+      "email": "y.nguyenq@gmail.com",
+      "password": "1234566",
+      "etpassword": "1234566"
+    },
+    {
+      "id": 1601400888322,
+      "email": "ky.nguye1nq@gmail.com",
+      "password": "1234567",
+      "etpassword": "1234567"
+    },
+    {
+      "id": 1601400954767,
+      "email": "ky.nguyenq1@gmail.com",
+      "password": "1234567",
+      "etpassword": "1234567"
+    }
+  ],
+
+ "products": [
+    {
+      "id" : "-MF_3PXXw4mHgge8S66R",
+      "address" : "274 Nguyễn Lương Bằng, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "thơm ngon bao rẻ",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped217626911.jpg?alt=media&token=b034ff05-32f8-489e-ae24-31662e8f9207",
+      "lat" : "16.0825051",
+      "lng" : "108.14626659999999",
+      "name" : "Cơm gà 247 - Nguyễn Lương Bằng ",
+      "price" : "35000"
+    },
+    {
+      "id" : "-MF_4bySiducO9k8HhcQ",
+      "address" : "16 Đường Nam Cao, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "đậm đà bao ngon",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped266466700.jpg?alt=media&token=21a6868a-f44a-460d-af9a-2d3801da9b19",
+      "lat" : "16.0667995",
+      "lng" : "108.1519675",
+      "name" : "Bà Ngọc - Bún Bò",
+      "price" : "30000"
+    },
+    {
+      "id" : "-MF_5jU9d7tctEa75Yjf",
+      "address" : "4 Nguyễn Đình Tựu, Hòa Khê, Thanh Khê, Đà Nẵng 550000, Việt Nam",
+      "description" : "Gà ta từ Quảng Nam",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1281627331.jpg?alt=media&token=7c9b0dcb-51aa-4d5d-b4a8-1af139cb0810",
+      "lat" : "16.0627483",
+      "lng" : "108.18060229999999",
+      "name" : "Quán Thủy - Xôi Gà",
+      
+      "price" : "20000"
+    },
+    {
+      "id" : "-MF_69KsAVjJ49tbbZj8",
+      "address" : "26 Nguyễn Công Hoan, Hoà Minh, Cẩm Lệ, Đà Nẵng 550000, Việt Nam",
+      "description" : "thơm ngon",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped8017614418510681497.jpg?alt=media&token=e98fd0e4-b7a9-46f3-8584-efe0794b563c",
+      "lat" : "16.0569751",
+      "lng" : "108.17432799999999",
+      "name" : "Su giòn nhân vani",
+      
+      "price" : "50000"
+    },
+    {
+      "id" : "-MF_6WqV9engrlSK3tjA",
+      "address" : "26 Nguyễn Công Hoan, Hoà Minh, Cẩm Lệ, Đà Nẵng 550000, Việt Nam",
+      "description" : "size 16",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped3543756388799022364.jpg?alt=media&token=82182000-31d2-4795-8b4e-c52392f4494a",
+      "lat" : "16.0569751",
+      "lng" : "108.17432799999999",
+      "name" : "Bông lan trứng muối",
+      
+      "price" : "150000"
+    },
+    {
+      "id" : "-MF_6hrgVwUxiOI4QCrI",
+      "address" : "71 Đặng Dung, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Cơm Nhà nấu",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped109263568.jpg?alt=media&token=8bbafe48-b7ae-4b7d-b8b8-4643fd671259",
+      "lat" : "16.0697023",
+      "lng" : "108.1505674",
+      "name" : "Quán 71 - Cơm Ngon Bình Dân",
+      
+      "price" : "25000"
+    },
+   {
+    "pd" : "-MF_6pH1tO2FG1QRirVw",
+    "address" : "Hải Châu, Đà Nẵng, Việt Nam",
+      "description" : "Tươi ngon",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1971813398.jpg?alt=media&token=88341ec1-32cd-4083-8467-44cb0b263460",
+      "lat" : "16.0472002",
+      "lng" : "108.2199588",
+      "name" : "Bún bò mệ Mui",
+      
+      "price" : "25000"
+    },
+   {
+    "pd" : "-MF_7G55YK4DEOuYtmub",
+    "address" : "91 Lê Văn Hiến, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+      "description" : "Thơm ngon bổ dưỡng",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1820147873304082526.jpg?alt=media&token=7ef0307b-2da6-4c47-85c1-de9490a4b399",
+      "lat" : "16.0235098",
+      "lng" : "108.2506835",
+      "name" : "Bánh mì xúc xích thịt chả",
+      
+      "price" : "15000"
+    },
+    {
+      "id" : "-MF_7dnx9PT2rDrgK9Ro",
+      "address" : "91 Lê Văn Hiến, Khuê Mỹ, Ngũ Hành Sơn, Đà Nẵng, Việt Nam",
+      "description" : "thơm,giòn",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped8099280722780170843.jpg?alt=media&token=40d83bd8-3051-4610-a331-478dd6fac1ea",
+      "lat" : "16.0235098",
+      "lng" : "108.2506835",
+      "name" : "Bành mì xúc xích",
+      
+      "price" : "15000"
+    },
+   {
+    "pd" : "-MF_8KlQ3Dy_PxSBSsuW",
+    "address" : "79 Điện Biên Phủ, Chính Gián, Thanh Khê, Đà Nẵng 550000, Việt Nam",
+      "description" : "chính gốc bát đàn",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped226542938.jpg?alt=media&token=884a07a6-b82f-4498-b150-40991b8c3103",
+      "lat" : "16.0654847",
+      "lng" : "108.2007022",
+      "name" : "Phở 79 - Phở Bát Đàn",
+      
+      "price" : "35000"
+    },
+   {
+    "pd" : "-MF_8UHvMEwcC2krdkJo",
+    "address" : "485 Đ. Trần Hưng Đạo, An Hải Trung, Sơn Trà, Đà Nẵng 550000, Việt Nam",
+      "description" : "20cm - 2 mùi",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped5396563784530142331.jpg?alt=media&token=54a510ab-95a6-427b-9b8b-c421c337bd29",
+      "lat" : "16.0635051",
+      "lng" : "108.2301844",
+      "name" : "Cute lover",
+      
+      "price" : "623000"
+    },
+    {
+      "id" : "-MF_8UmsfP6V4ab3bl0D",
+      "address" : "34 Ngô Văn Sở, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Bánh Cuốn Nóng",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped2022934338.jpg?alt=media&token=8a284fab-08dc-4f8d-ad46-c1d3ed36c210",
+      "lat" : "16.0687812",
+      "lng" : "108.1501861",
+      "name" : "Minh Châu Quán",
+      
+      "price" : "20000"
+    },
+   {
+    "pd" : "-MF_8kOdXthpyoaS4u9E",
+    "address" : "485 Đ. Trần Hưng Đạo, An Hải Trung, Sơn Trà, Đà Nẵng 550000, Việt Nam",
+      "description" : "15 cm",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped6915341162416754981.jpg?alt=media&token=6f09f65e-2bb0-4697-866b-71efccefebcf",
+      "lat" : "16.0635051",
+      "lng" : "108.2301844",
+      "name" : "Berry white",
+      
+      "price" : "407200"
+    },
+    
+    {
+      "id" : "-MF_9RP3RPhC0jHmeBQi",
+      "address" : "5 Lạc Long Quân, Hoà Khánh Bắc, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "mẫu bánh có thể thay đổi",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped3464946509347831601.jpg?alt=media&token=88ddbb59-42c8-41cd-b5af-fc7500ceab95",
+      "lat" : "16.0763765",
+      "lng" : "108.1463806",
+      "name" : "Bánh ăn",
+      
+      "price" : "35000"
+    },
+   {
+    "pd" : "-MF_A3Mfd0shN2V47gNy",
+    "address" : "9 Chơn Tâm 1, Hoà Minh, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "cay là ngon - bao tươi sống",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1956031819.jpg?alt=media&token=c27dc49b-0494-44cb-97e1-c38daeb32696",
+      "lat" : "16.0644356",
+      "lng" : "108.1592108",
+      "name" : "Ốc Chọn",
+      
+      "price" : "69000"
+    },
+    {
+      "id" : "-MF_A9iEntpfMTWIHNM9",
+      "address" : "265 Kinh Dương Vương, Thanh Khê Tây, Liên Chiểu, Đà Nẵng, Việt Nam",
+      "description" : "ngon bổ dưỡng",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped4747115643042930637.jpg?alt=media&token=20f2240d-de96-46fe-8ebe-aeb96432de3e",
+      "lat" : "16.076391300000004",
+      "lng" : "108.1668138",
+      "name" : "Bánh tart trứng",
+      
+      "price" : "9000"
+    },
+    {
+      "id" : "-MF_AZpKq_B6GuyVfyq6",
+      "address" : "265 Kinh Dương Vương, Thanh Khê Tây, Liên Chiểu, Đà Nẵng, Việt Nam",
+      "description" : "ngon",
+      "idCategory" : "-MF_3FAT6EKezRl-b2Jo",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped228687923293514982.jpg?alt=media&token=27d8103d-ec43-49f1-bf31-b8f4416b5889",
+      "lat" : "16.076391300000004",
+      "lng" : "108.1668138",
+      "name" : "Thập cẩm phô mai",
+      
+      "price" : "12000"
+    },
+    {
+      "id" : "-MF_AaPphaVrREeGJU41",
+      "address" : "105 Phạm Như Xương, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "dậm đà thơm ngon ",
+      "idCategory" : "-MF_0AkFws8TRYbp3RBA",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped849453077.jpg?alt=media&token=6833a2f1-11c5-454e-9663-1ad4af9315b0",
+      "lat" : "16.064000999999998",
+      "lng" : "108.1530887",
+      "name" : "Quán Thiện - Bún Chả Cá",
+      
+      "price" : "25000"
+    },
+   {
+    "pd" : "-MF_B9LBJRPw8GCwi2Ul",
+    "address" : "65 Đường Nam Cao, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Mát mẻ sảng khoái",
+      "idCategory" : "-MF_AcPIPX4qXmF4QnZv",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped-2126245729.jpg?alt=media&token=311fabad-d99c-4819-9b95-2c2de6e9f549",
+      "lat" : "16.0662569",
+      "lng" : "108.15010880000001",
+      "name" : "Bobapop Hòa Khánh",
+      
+      "price" : "15000"
+    },
+   {
+    "pd" : "-MF_Bdk5Ezv3fNoS8O9Y",
+    "address" : "156 Lê Đại Hành, Hòa Thọ Đông, Cẩm Lệ, Đà Nẵng 550000, Việt Nam",
+      "description" : "Cực ngon cực rẻ",
+      "idCategory" : "-MF_AcPIPX4qXmF4QnZv",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped832788431.jpg?alt=media&token=734a4c9a-7fab-4e4d-803a-131b5084c208",
+      "lat" : "16.0227623",
+      "lng" : "108.2016962",
+      "name" : "Mộc Tea - Đà Nẵng",
+      
+      "price" : "20000"
+    },
+     {
+      "pd" : "-MF_CC0BK1zBs1U86o1w",
+      "address" : "29 Nguyễn Văn Linh, Nam Dương, Hải Châu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Thương hiệu uy tín",
+      "idCategory" : "-MF_AcPIPX4qXmF4QnZv",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1592037082.jpg?alt=media&token=15be7b4d-4619-4f17-bd0a-48e9edfabf11",
+      "lat" : "16.0601925",
+      "lng" : "108.2150242",
+      "name" : "Gong Cha",
+      
+      "price" : "350000"
+    },
+    {
+      "id" : "-MF_CEImPwmzn3kKNCu9",
+      "address" : "49 Ngô Thì Nhậm, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Mát lạnh",
+      "idCategory" : "-MF_12QQUHsVylRLTU40",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped965133126385525797.jpg?alt=media&token=f1e4ce26-2187-41b5-9dd8-8d46978a9826",
+      "lat" : "16.0704977",
+      "lng" : "108.1538234",
+      "name" : "Trà along",
+      
+      "price" : "35000"
+    },
+    {
+      "id" : "-MF_CUQjT1PdeBNjSXzq",
+      "address" : "49 Ngô Thì Nhậm, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "mùi vị thơm ngon",
+      "idCategory" : "-MF_12QQUHsVylRLTU40",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1165491500532648467.jpg?alt=media&token=46c372dd-25c3-4eb9-a23f-f48f1a8cedc9",
+      "lat" : "16.0704977",
+      "lng" : "108.1538234",
+      "name" : "Trà đào cam sả",
+      
+      "price" : "35000"
+    },
+    {
+      "id" : "-MF_CepM7Ndg5dFauBaU",
+      "address" : "8 Nguyễn Văn Linh, Nam Dương, Hải Châu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Mới mẻ độc đáo",
+      "idCategory" : "-MF_AcPIPX4qXmF4QnZv",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped225181260.jpg?alt=media&token=a318c3e0-efb6-4801-a4df-d89ffee831b0",
+      "lat" : "16.061121099999998",
+      "lng" : "108.2191939",
+      "name" : "Xi Cha - Đà Nẵng",
+      
+      "price" : "26000"
+    },
+   {
+    "pd" : "-MF_D8SMjjAxmOee_eNf",
+    "address" : "114 Ngô Văn Sở, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "mùi vị thơm ngon",
+      "idCategory" : "-MF_12QQUHsVylRLTU40",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped4335005382755208346.jpg?alt=media&token=fd3e93a7-c841-47e7-9d07-03d46cc43c2f",
+      "lat" : "16.0677861",
+      "lng" : "108.1481857",
+      "name" : "Nước cam",
+      
+      "price" : "35000"
+    },
+    {
+      "id" : "-MF_DB1COTPUr6QKDqE9",
+      "address" : "275 Núi Thành, Hoà Cường Bắc, Hải Châu, Đà Nẵng 550000, Việt Nam",
+      "description" : "Thương hiệu trà sữa mới",
+      "idCategory" : "-MF_AcPIPX4qXmF4QnZv",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped878303216.jpg?alt=media&token=7f7b3064-70ba-448c-a76f-afea36639fd5",
+      "lat" : "16.0444132",
+      "lng" : "108.2213665",
+      "name" : "Goo Tea - Đà Nẵng",
+      
+      "price" : "15000"
+    },
+    {
+      "id" : "-MF_DMj9ZOsZHKL3OlRy",
+      "address" : "114 Ngô Văn Sở, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
+      "description" : "mùi vị ngọt ngào",
+      "idCategory" : "-MF_12QQUHsVylRLTU40",
+      "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Product%20Images%2Fcropped1153843038874838668.jpg?alt=media&token=ba47cf81-77af-4165-abb8-e2a9af63d628",
+      "lat" : "16.0677861",
+      "lng" : "108.1481857",
+      "name" : "Nước ép cà rốt",
+      
+      "price" : "30000"
+    }
+    
+  
+  ],
+  "categories": [
+    {
+        "id" : "-MF_0AkFws8TRYbp3RBA",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped1157256064.jpg?alt=media&token=1e1baab9-9d49-43e6-b91a-f07673553450",
+        "name" : "Food"
+    },
+    {
+        "id" : "-MF_0RZr1X5o6SXeHBK3",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped887723767.jpg?alt=media&token=19a80c83-43a6-4330-9120-43f90db87bd7",
+        "name" : "Wine"
+    },
+        {
+        "id" : "-MF_12QQUHsVylRLTU40",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped498308865.jpg?alt=media&token=3d521261-bfbf-45ea-ae8e-90b33083a705",
+        "name" : "Juice"
+    },
+    {
+        "id" : "-MF_3FAT6EKezRl-b2Jo",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped1916715258.jpg?alt=media&token=b7fcc100-177f-4c85-b53b-883300e785f3",
+        "name" : "Cake"
+    },
+    {
+        "id" : "-MF_AcPIPX4qXmF4QnZv",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped-1916485102.jpg?alt=media&token=29d619a3-2052-4691-91f9-72da246eece3",
+        "name" : "Milk Tea"
+    },
+    {
+        "id" : "-MFamJjdmrvK_hjHJWeN",
+        "image" : "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped-2056749679.jpg?alt=media&token=7fedc0de-7807-41e5-a69e-576e2bd3ac84",
+        "name" : "Vegetarian"
+    }
+
+  ]
+}

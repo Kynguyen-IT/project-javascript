@@ -1,0 +1,120 @@
+.col_left {
+    height: 100vh;
+    background: linear-gradient(
+        to bottom,
+        rgba(0,0,0, 0),
+        rgb(197 148 0 / 59%)
+    ),url(../../assets/images/WBC_7095.jpg);
+    background-size:100% 100%;
+
+    border-top-right-radius: 80px 80px;
+}
+
+@media only screen and (max-width: 571px) {
+    .container_page{
+        flex-direction: column;
+    }
+    .col_left {
+        height: 40vh;
+    }
+
+    .col_right{
+        margin-top: 5%;
+    }
+
+    .title {
+        margin-bottom: 5% !important;
+    }
+
+    .text {
+        margin-top: 5% !important;
+    }
+    
+}
+
+.col_right{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_box {
+    display: flex;
+    flex-direction: column;
+    /* text-align: center; */
+    align-items: center;
+}
+
+.title {
+    margin-bottom: 10%;
+    font-weight: 600;
+    color: #fd7e14;
+}
+
+label {
+    font-weight: 600;
+}
+
+.input_w {
+    display: initial !important;
+}
+.form_group {
+	position: relative;
+}
+.form_group.success input {
+	border-color: #2ecc71;
+}
+
+.form_group.success  .fa-check-circle {
+    visibility: visible;
+    color: #2ecc71;
+}
+
+.form_group.error input {
+	border-color: #e74c3c;
+}
+
+.form_group.error  .fa-exclamation-circle  {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.icon_fas {
+    position: absolute;
+    top: 43px;
+    right: 13px;
+    visibility: hidden;
+}
+
+.message_input {
+   visibility: hidden;
+}
+
+.form_group.error  .message_input  {
+    visibility: visible;
+    color: #e74c3c;
+}
+
+.error_login {
+    display: block !important;
+    margin: -15px 0px 10px 0px;
+    text-align: center;
+    visibility: hidden;
+}
+
+.btn_login {
+    width: 100%;
+    background-color: #fd7e14 !important;
+    border-color: #fd7e14 !important;
+    color: #fff !important;
+}
+
+.text {
+    margin-top: 10%;
+}
+
+
+.register {
+    color: #fd7e14;
+}
+
