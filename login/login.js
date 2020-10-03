@@ -43,10 +43,11 @@ function checkInputs(){
       if(data.email == user.email && data.password == user.password){
         console.log(user)
         localStorage.setItem("userLogin", JSON.stringify(user));
+        document.getElementById('error_login').classList.add("not_show")
         window.location.pathname = '../'
       }
       else{
-        document.getElementById('error_login').style.visibility='visible';
+        document.getElementById('error_login').classList.add("show")
       }
     }))
   }

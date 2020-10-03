@@ -4,7 +4,7 @@
 }
 
 * {
-  font-family: roboto !important;
+  font-family: roboto;
   font-size: 16px;
 }
 
@@ -171,8 +171,9 @@ main .title_main {
   color: #fd7e14;
   text-align: center;
   border-bottom: 2px solid;
-  width: 30%;
+  width: 50%;
   font-weight: 600;
+  font-size: 50px;
 } 
 
 main .pagination_box{
@@ -268,4 +269,29 @@ main .btn_button:hover {
   transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
+main .how_to_order {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+main .how_to_order .title_main {
+  margin: 2% auto 1% ;
+}
+
+main .how_to_order .text {
+  font-size: 20px;
+  color: #9a9a9a;
+}
+
+main .how_to_order .box_card {
+  box-shadow: none;
+}
+
+
+main .icon{
+  font-size: 70px;
+  color: #6c757d;
+}
 

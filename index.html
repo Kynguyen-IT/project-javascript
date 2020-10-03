@@ -3,10 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./style/main.css"/>
     <link rel="stylesheet" href="./style/reset.css"/>
     <link rel="stylesheet" href="./style/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="./style/animate.css"/>
+    <link rel="stylesheet" href="./style/fontAwesome/css/all.min.css"/>
+    <link rel="stylesheet" href="./style/main.css"/>
+
+
   <title>Fooddy</title>
 
 </head>
@@ -21,7 +24,7 @@
         <div class="collapse navbar-collapse narbar_collapse" id="navbarSupportedContent">
         <div class="navbar-nav ml-auto">
           <a class="nav-link active nav_link" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link nav_link" href="#">Cart <span class="badge badge-secondary numberCircle">0</span> </a>
+          <a class="nav-link nav_link" href="#">Cart<span class="badge badge-secondary numberCircle">0</span> </a>
           <a class="nav-link nav_link" href="#">Contact</a>
           <a class="nav-link nav_link" id="login" href="./login" >Login</a>
           <div id="dropDown"  class="dropdown show">
@@ -38,17 +41,19 @@
         </div>
       </div>  
     </nav>  
+
+    <div class="container-fuild">
+      <div class="box-head">
+        <div class="box-text">
+          <h1 class="title_box-text">You Favorite Food Delivered Hot & Fresh</h1>
+        <span class="text_box-text mt-3 mb-3">Helthy switcher chefs do all the prep work like peeding chopping & marinating so you can cook a fresh food </span>
+        <a type="button" class="btn btn-warning btn_box-text">Order now</a>
+      </div>
+    </div>
   </header>
-    <main>
-        <div class="container-fuild">
-          <div class="box-head">
-            <div class="box-text">
-              <h1 class="title_box-text">You Favorite Food Delivered Hot & Fresh</h1>
-            <span class="text_box-text mt-3 mb-3">Helthy switcher chefs do all the prep work like peeding chopping & marinating so you can cook a fresh food </span>
-            <a type="button" class="btn btn-warning btn_box-text">Order now</a>
-          </div>
-        </div>
-        <div class="container">
+    <main>   
+      <div class="container">
+        <div class="fooddy">
           <h2 class="title_main">Fooddy</h2>
           <div id="list_product" class="row">
           </div>
@@ -57,8 +62,28 @@
             <ul id="pagination" class="pagination">       
             </ul>
           </nav>
+        </div>  
+
+        <div class="how_to_order">
+          <h3 class="title_main">How To Order?</h2>
+          <span class="text">Follow the Steps</span>
+
+          <div class="row">
+            <div class='col-lg-3 col-sm-4'>
+              <div class='card box_card'>
+                <span class="fas fa-location-arrow icon"></span>
+               
+                <span class="step">1</span>
+           
+                <span class="text_step"></span>
+              </div>
+            </div>
+          </div>
+        </div>
+        
       </div>
-      
+
+    
      
     </main>
 

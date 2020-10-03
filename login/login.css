@@ -46,9 +46,10 @@
 }
 
 .title {
-    margin-bottom: 10%;
+    margin-bottom: 5%;
     font-weight: 600;
     color: #fd7e14;
+    font-size: 40px;
 }
 
 label {
@@ -118,3 +119,10 @@ label {
     color: #fd7e14;
 }
 
+.show {
+    visibility: visible !important;
+}
+
+.not_show {
+    visibility: hidden !important;
+}
