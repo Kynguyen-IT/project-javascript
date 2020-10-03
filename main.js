@@ -5,6 +5,17 @@ var dropDown = document.getElementById('dropDown')
 var storeProducts = JSON.parse(localStorage.getItem("products"));
 var list = document.getElementById('list_product')
 var pagination = document.getElementById('pagination')
+var nav = document.getElementById('nav')
+
+window.onscroll = function () { 
+  if ($(window).scrollTop() >= 50) {
+    nav.classList.add('scrolled')
+  } else {
+    nav.classList.remove('scrolled')
+  }
+};
+
+
 
 
 
@@ -62,7 +73,7 @@ function DisplayList(items,wrapper,columns_per_page, page){
     product += "<div class='box_imges' >";
     product += "<div style='background-image: url("+ item.image +")' class='box_image_item'>";
     product += "</div>";
-    product += "<div class='card-body'>";
+    product += "<div class='card-body card_body'>";
     product += "<a href='' class='card-title title_item'>"+item.name+"</a>";
     product += "<p class='card-text text_item'>"+item.price+"₫</p>";
     product += "<button class='btn btn_button'>Order</button>";                       

@@ -11,55 +11,56 @@
 
 </head>
 <body >
-  <div class="container-fuild">
-    <header>
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-light nav_bar" id="nav">
       <div class="container">
-        <nav class="navbar navbar-expand-lg navbar-light nav_bar">
-          <a class=" title_home" href="#">Fooddy</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse narbar_collapse" id="navbarSupportedContent">
-            <div class="navbar-nav ml-auto">
-              <a class="nav-link active nav_link" href="#">Home <span class="sr-only">(current)</span></a>
-              <a class="nav-link nav_link" href="#">Cart <span class="badge badge-secondary numberCircle">0</span> </a>
-              <a class="nav-link nav_link" href="#">Contact</a>
-              <a class="nav-link nav_link" id="login" href="./login" >Login</a>
-              <div id="dropDown"  class="dropdown show">
-                <a id="dropDown_link" class="nav-link btn dropdown-toggle dropdown_toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Dropdown link
-                </a>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                  <a class="dropdown-item" href="#">Profile</a>
-                  <a class="dropdown-item" href="#">Admin</a>
-                  <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
-                </div>
-              </div>
+        <a class=" title_home" href="#">Fooddy</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse narbar_collapse" id="navbarSupportedContent">
+        <div class="navbar-nav ml-auto">
+          <a class="nav-link active nav_link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link nav_link" href="#">Cart <span class="badge badge-secondary numberCircle">0</span> </a>
+          <a class="nav-link nav_link" href="#">Contact</a>
+          <a class="nav-link nav_link" id="login" href="./login" >Login</a>
+          <div id="dropDown"  class="dropdown show">
+            <a id="dropDown_link" class="nav-link btn dropdown-toggle dropdown_toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              <a class="dropdown-item" href="#">Profile</a>
+              <a class="dropdown-item" href="#">Admin</a>
+              <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
             </div>
           </div>
-        </nav>
-
-        <div class="box-text">
-          <h1 class="title_box-text">You Favorite Food Delivered Hot & Fresh</h1>
-          <span class="text_box-text">Helthy switcher chefs do all the prep work like peeding chopping & marinating so you can cook a fresh food </span>
-          <a type="button" class="btn btn-warning btn_box-text">Order now</a>
         </div>
-      </div>
-    </header>
+        </div>
+      </div>  
+    </nav>  
+  </header>
     <main>
-      <div class="container">
-        <h2 class="title_main">Fooddy</h2>
-        <div id="list_product" class="row">
+        <div class="container-fuild">
+          <div class="box-head">
+            <div class="box-text">
+              <h1 class="title_box-text">You Favorite Food Delivered Hot & Fresh</h1>
+            <span class="text_box-text mt-3 mb-3">Helthy switcher chefs do all the prep work like peeding chopping & marinating so you can cook a fresh food </span>
+            <a type="button" class="btn btn-warning btn_box-text">Order now</a>
+          </div>
         </div>
+        <div class="container">
+          <h2 class="title_main">Fooddy</h2>
+          <div id="list_product" class="row">
+          </div>
+        
+          <nav  aria-label="Page navigation" class="pagination_box">
+            <ul id="pagination" class="pagination">       
+            </ul>
+          </nav>
+      </div>
       
-        <nav  aria-label="Page navigation" class="pagination_box">
-          <ul id="pagination" class="pagination">
-            
-          </ul>
-        </nav>
      
     </main>
-  </div>
 
   <script src="./style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
   <script src="./style/bootstrap/js/popper.min.js"></script>

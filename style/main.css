@@ -9,70 +9,65 @@
 }
 
 
-header {
-  height: 420px;
-  background-size: cover;
-  background: linear-gradient(
-    to bottom,
-    rgba(0,0,0, 0),
-    rgb(197 148 0 / 59%)
-  ),url(../assets/images/bg.jpg) no-repeat 100% 77%;
-  padding-bottom: 5%;
-}
 
-header .nav_bar{
-  height: 70px;
-  padding: 0;
+.nav_bar{
   text-align: right;
   margin: 0;
-  transition: 1s;
+  top: 0;
+  position: fixed !important;
+  height: 60px;
+  width: 100%; /* background when scroll is in the top */
+  transition: 0.5s; /* control how smooth the background changes */
+  z-index: 9999;
+}
+
+nav.scrolled {
+  background: #0a0a0aad;
+  transition: 0.5s;
+ 
 }
 
 @media only screen and (max-width: 991px) {
-  header .narbar_collapse {
-    position: absolute;
+   .narbar_collapse {
       text-align: center;
-      background-color: #ffffffbf;
+      background-color: #0a0a0aad;
       z-index: 999;
-      width: 100%;
-      top: 55px;
   }
 }
 
-
-header .title_home{
-  color: #343a40;
+.title_home{
+  color: #fff;
   font-size: 22px;
   text-decoration: none !important;
 }
 
-header .title_home:hover {
+.title_home:hover {
   color: #e0a800 !important;
 }
 
-header .nav_link{
+.nav_link{
   font-size: 18px;
-  color: #343a40 !important;
+  color: #fff !important;
 }
 
-header .nav_link:hover, .nav_link:active {
+.nav_link:hover, .nav_link:active {
   color: #e0a800 !important;
 }
-header .dropdown_toggle{
-  color: #343a40 !important;
+.dropdown_toggle{
+  color: #fff !important;
   /* padding-top: 10.5px !important; */
   font-size: 18px;
 }
 
-header .dropdown_toggle:hover{
+.dropdown_toggle:hover{
   border-color:#e0a800 ;
 }
-header .dropdown_toggle:focus{
+.dropdown_toggle:focus{
   box-shadow: none;
   border-color:#e0a800 ;
 }
 
-/* header .numberCircle {
+/*  .numberCircle {
   border-radius: 50%;
   width: 20px;
   height: 20px;
@@ -85,75 +80,89 @@ header .dropdown_toggle:focus{
   top: 2px;
   right: 139px;
 } */
+.box-head{
+  display: flex;
+  background-size: cover;
+  background-image: url(../assets/images/bg-11.jpg);
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  padding-bottom: 5%;
+  color: #fff;
+  height: 420px;
+}
 
-header .box-text {
+.box-text {
   display: flex;
   width: 60%;
   flex-direction: column;
-  margin: 0 auto;
+  margin: 8% auto 0;
   justify-content: space-between;
-  height: 250px;
-  margin-top: 5%;
   text-align: center;
+  align-self: center;
 }
 
 @media only screen and (max-width: 768px) {
 
-  header .box-text{
+   .box-text{
     height: 290px !important;
   }
 
-  header .title_box-text{
+   .title_box-text{
     font-size:40px !important;
   }
   
-  header .text_box-text{
+   .text_box-text{
     font-size:16px !important;
   }
 }
 
 @media only screen and (max-width: 991px) {
-  header .title_box-text{
+   .title_box-text{
     font-size:40px !important;
   }
   
-  header .text_box-text{
+   .text_box-text{
     font-size:16px !important;
   }
 }
 
 @media only screen and (max-width: 487px) {
-  header .title_box-text{
+   .title_box-text{
     font-size:36px !important;
   }
   
-  header .text_box-text{
+   .text_box-text{
     font-size:12px !important;
   }
 
 }
 
 @media only screen and (max-width: 385px) {
-  header .title_box-text{
+  .title_box-text{
     font-size:31px !important;
   }
   
 }
-header .title_box-text{
+.title_box-text{
   font-size:50px;
   font-weight: 600;
 }
 
-header .text_box-text{
+.text_box-text{
   font-size:22px;
+  color: rgba(255, 255, 255, 0.9);
 }
 
-header .btn_box-text{
+.btn_box-text{
   display: block;
   margin: 0 auto;
   background-color: #fd7e14;
   border-color: #fd7e14;
   color: #fff;
+}
+
+.card_body{
+  text-align: center;
 }
 
 
