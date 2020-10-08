@@ -19,20 +19,36 @@ async function getDataInput(){
     id: Date.now(),
     email: email.value,
     password: password.value,
-    etpassword:  etpassword.value
+    etpassword:  etpassword.value,
+    
+    role: {
+      amdin: false,
+      member: true
+    }
   }
+  
+  fetch(`http://localhost:3000/users?email=${data.email}`, {
+    method: "GET"
+  }).then(r => r.json()).then(exist => {
+    if (exist.length != 0) {
+      setErrorFor(email,'Email exists');
+      return;
+    }else{
+      fetch('http://localhost:3000/users', {
+        method: 'POST',
+        headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      }).then(response => response.json())
+      .then((responseJson) => console.log(responseJson))
 
-  fetch('http://localhost:3000/users', {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(data)
-  }).then(response => response.json())
-  .then((responseJson) => console.log(responseJson))
+      window.location.pathname = '../'
+    }
+  })
 
-  window.location.pathname = '../'
+  
 }
 
 

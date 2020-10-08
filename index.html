@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./style/reset.css"/>
-    <link rel="stylesheet" href="./style/text.min.css"/>
+    <!-- <link rel="stylesheet" href="./style/text.min.css"/> -->
     <link rel="stylesheet" href="./style/bootstrap/css/bootstrap.css"/>
     <link rel="stylesheet" href="./style/animate.css"/>
     <link rel="stylesheet" href="./style/fontAwesome/css/all.min.css"/>
@@ -25,7 +25,7 @@
         <div class="collapse navbar-collapse narbar_collapse" id="navbarSupportedContent">
         <div class="navbar-nav ml-auto">
           <a class="nav-link active nav_link" href="#">Home <span class="sr-only">(current)</span></a>
-          <a class="nav-link nav_link" href="#">Cart<span class="badge badge-secondary numberCircle">0</span> </a>
+          <a class="nav-link nav_link cart_link" href="#">Cart<span class="badge badge-secondary numberCircle">0</span> </a>
           <a class="nav-link nav_link" href="#">Contact</a>
           <a class="nav-link nav_link" id="login" href="./login" >Login</a>
           <div id="dropDown"  class="dropdown show">
@@ -34,7 +34,7 @@
             </a>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
               <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">Admin</a>
+              <a class="dropdown-item" href="./admin">Admin</a>
               <a class="dropdown-item" href="#" onclick="logout()">Logout</a>
             </div>
           </div>

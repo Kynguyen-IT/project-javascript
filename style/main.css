@@ -67,19 +67,23 @@ nav.scrolled {
   border-color:#e0a800 ;
 }
 
-/*  .numberCircle {
+.cart_link{
+  position: relative;
+}
+
+.numberCircle {
   border-radius: 50%;
   width: 20px;
   height: 20px;
   font-size: 12px;
-  padding: 2px;
+  padding: 3px;
   background: #ffc107;
   color: #fff;
   text-align: center;
   position: absolute;
-  top: 2px;
-  right: 139px;
-} */
+  top: -2px;
+  right: -8px;
+}
 .box-head{
   display: flex;
   background-size: cover;
