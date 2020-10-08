@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cart.css"/>
+    <link rel="stylesheet" href="../.././style/reset.css"/>
+    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css"/>
+    <link rel="stylesheet" href="../.././style/animate.css"/>
+    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css"/>
+  <title>Fooddy</title>
+
+</head>
+<body>
+  <div class="container-fluid m-0 p-0">
+    <a href="/" class="title_cart">Fooddy</a>
+    <div class="row cart mr-0 ml-0">
+      <div class="box_image col-md-4">
+        <h4 class="title">Cart</h4>
+        <img class="img-fluid" src="../../../assets/images/Coffee-bike.jpg" alt="cart">
+        <div class="col-md-12 justify-content-between d-flex flex-column align-items-center">
+          <span id="your_cart" >You have 0 items in your cart</span>
+          <button id="clear_cart" type="button" onclick="clearCart()" class="btn btn-danger clear_cart">Clear
+            cart</button>
+        </div>
+ 
+      </div>
+      <div class="container box_cart p-0 col-md-8">
+        <table class="table table-fixed">
+          <thead>
+            <tr>
+              <th scope="col" class="text-tbhead">Image</th>
+              <th scope="col" class="text-tbhead">name</th>
+              <th scope="col" class="text-tbhead">Quantity</th>
+              <th scope="col" class="text-tbhead">Price</th>
+              <th scope="col" class="text-tbhead">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody class="list">
+            
+          </tbody>
+          <!-- <tfoot>
+            <tr id="cart_empty" style="visibility: visible;">
+              <td colspan="5">No thing in this cart.</td>
+            </tr>
+          </tfoot> -->
+        </table>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4"></div>
+          <div class="col-md-8  mt-3 align-items-center">
+            <div class="row">
+              <div class="col-6">
+                <button *ngIf="cart.items.length" (click)="openCheckout()" type="button" class="btn btn-success">Check
+                  Out</button>
+              </div>
+ 
+              <div class="col-6">
+                <span class="total">Total: <span id="total">0</span> </span>
+              </div>
+            </div>
+          </div>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+
+  <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+  <script src="../../style/bootstrap/js/popper.min.js"></script>
+  <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
+  <script src="../assets/js/lodash.js"></script>
+  <script src="./cart.js"></script>
+</body>
+</html>

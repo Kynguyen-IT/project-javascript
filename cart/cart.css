@@ -1,0 +1,141 @@
+.title_cart{
+    display: inline-block;
+    margin: 2% auto;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color:  #333;
+    width: 100%;
+    font-size: 40px;
+}
+
+.title_cart:hover {
+    color: #ea8025;
+    text-decoration: none;
+    transition: 0.5s;
+  }
+
+
+.cart {
+    padding-top: 20px;
+    height: 525px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.box_cart {
+    max-height: 351px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.box_image {
+    width: 100%;
+    height: auto;
+}
+
+thead {
+    background-color: #ea8025 ;
+}
+.text-tbhead{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.title {
+    position: absolute;
+    margin-top: 30px;
+    margin-left: 200px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ea8025;
+    border-bottom: 2px solid;
+    width: 100px;
+    font-size: 37px;
+}
+
+@media only screen and (max-width: 991px) {
+    .box_image {
+        margin-bottom: 5%;
+    }
+
+    .title {
+        display: none;
+    }
+}
+
+/* @media only screen and (max-width: 768px) {
+    .title {
+        display: none;
+    }
+} */
+
+@media only screen and (max-width: 487px) {
+    .table{
+        display: inline-block;
+        overflow-x: scroll;
+        overflow-y: hidden;
+        height: auto;
+        white-space:nowrap
+    }
+
+    button .btn {
+        padding: 1%;
+    }
+}
+
+.list {
+    line-height: 48px;
+    transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+.box_img {
+    width: 50px;
+    height: 50px;
+    margin: 0 auto;
+    background-origin: unset;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+}
+span.total {
+    float: right;
+    font-size: 22px;
+    clear: right;
+    color: #ea8025;
+}
+.clear_cart {
+    width: 100px;
+    margin-top: 10px;
+}
+
+th, td {
+    text-align: center !important;
+}
+
+td.images {
+    text-align: -webkit-center;
+}
+
+.icon_button {
+    background-color: #f9c229;
+    width: 25px;
+    height: 25px;
+    padding: 4px;
+    border-radius: 50%;
+}
+
+.btn:focus {
+    box-shadow: unset !important;
+}
+
+.btn i:hover {
+    background-color: #ffb000;
+}
+
+.text_quantity {
+    max-width: 30px;
+}
+
+.hidden {
+    visibility: hidden ;
+}

@@ -117,50 +117,7 @@ function onLoadCartNumber(){
   }
 }
 
-function clickOrder (item) {
-  // fetch(`http://localhost:3000/products?id=${item}`,{
-  //   method: "GET",
-  // }).then(r => r.json())
-  // .then(item => {
-  //   if (cart.length) {
-  //     cartItem = {
-
-  //     }
-  //     // var existCart = false;
-  //     // for (var i = 0; i < cart.length; i++) {
-  //     //   if (cart[i].id == item[0].id) existCart = true;
-  //     //   else existCart = false;
-  //     // }
-
-  //     // if (existCart) {
-  //     //   cart = [..]
-  //     // }
-  //     // var newCart = [];
-  //     cart.map(prod => {
-  //       if(prod.id == item[0].id){
-  //         [...cart, {...prod, quantity: prod.quantity + 1} ]
-  //       } else{
-
-  //       }
-  //     });
-  //     // console.log(newCart)
-  //     // cart = newCart;
-  //     // var cartItem = cart.filter(prod => prod.id == item[0].id)[0];
-  //     // cart.map(prod => prod.id )
-  //     // if (cartItem) {
-  //     //   cartItem = {...cartItem, quantity: cartItem.quantity + 1}
-  //     // } else {
-  //     //   cartItem = {...item[0], quantity: 1}
-  //     // }
-  //     // cart = [...cart, cartItem]
-  //   }else {
-  //     cart = [{...item[0], quantity: 1}];
-  //   }
-  //   console.clear();
-  //  console.log(cart);
-  //   // localStorage.setItem("cart",JSON.stringify(cart))   
-  // })
-
+function clickOrder(item) {
   let productNumber = localStorage.getItem('cartNumber')
 
   productNumber = parseInt(productNumber)
@@ -174,6 +131,8 @@ function clickOrder (item) {
   }
   setItem(item);
 }
+
+
 
 
 function setItem(item){
