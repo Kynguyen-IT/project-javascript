@@ -65,6 +65,9 @@ function DisplayList(items,wrapper,columns_per_page, page){
   let product =''
   for(let i = 0; i < paginationItems.length;i++){
     let item = paginationItems[i];
+    let  url = `./profile-product/index.html?id=${item.id}`
+    // var currentUrl = window.location.pathname+"profile-product" + `?id=${item.id}`;
+    
 
     product = "<div class='col-lg-3 col-sm-4'>";
     product += "<div class='card box_card'>";
@@ -72,7 +75,7 @@ function DisplayList(items,wrapper,columns_per_page, page){
     product += "<div style='background-image: url("+ item.image +")' class='box_image_item'>";
     product += "</div>";
     product += "<div class='card-body card_body'>";
-    product += "<a href='' class='card-title title_item'>"+item.name+"</a>";
+    product += "<a href='"+url+"' class='card-title title_item'>"+item.name+"</a>";
     product += "<p class='card-text text_item'>"+item.price+"₫</p>";
     product += "<button id='item" + item.id + "' class='btn btn_button'>Order</button>";                       
     product += "</div>";
@@ -131,8 +134,6 @@ function clickOrder(item) {
   }
   setItem(item);
 }
-
-
 
 
 function setItem(item){
