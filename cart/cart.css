@@ -136,6 +136,6 @@ td.images {
     max-width: 30px;
 }
 
-.hidden {
-    visibility: hidden ;
+.cart_empty {
+  visibility: hidden;
 }
