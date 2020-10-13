@@ -6,7 +6,7 @@
       "password": "1234567",
       "etpassword": "1234567",
       "role": {
-        "amdin": false,
+        "amdin": true,
         "member": true
       }
     },
@@ -16,7 +16,7 @@
       "password": "1234567",
       "etpassword": "1234567",
       "role": {
-        "amdin": false,
+        "amdin": true,
         "member": true
       }
     }
