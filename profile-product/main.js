@@ -39,14 +39,14 @@ const renderProduct = (product) => {
 
 function clickOrder(item) {
     let productNumber = localStorage.getItem('cartNumber')
-
-  
+    productNumber = parseInt(productNumber)
     if(productNumber){
       localStorage.setItem('cartNumber', productNumber + 1)
     }else{
       localStorage.setItem('cartNumber', 1)
     }
     setItem(item);
+  alert('You have add to cart, Success!!!')
 }
 
 function setItem(item){

@@ -6,7 +6,7 @@
       "password": "1234567",
       "etpassword": "1234567",
       "role": {
-        "amdin": true,
+        "admin": true,
         "member": true
       }
     },
@@ -16,7 +16,7 @@
       "password": "1234567",
       "etpassword": "1234567",
       "role": {
-        "amdin": true,
+        "admin": true,
         "member": true
       }
     }
@@ -311,7 +311,7 @@
       "price": "26000"
     },
     {
-      "pd": "-MF_D8SMjjAxmOee_eNf",
+      "id": "-MF_D8SMjjAxmOee_eNf",
       "address": "114 Ngô Văn Sở, Hoà Khánh Nam, Liên Chiểu, Đà Nẵng 550000, Việt Nam",
       "description": "mùi vị thơm ngon",
       "idCategory": "-MF_12QQUHsVylRLTU40",

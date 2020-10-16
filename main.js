@@ -38,7 +38,7 @@ const getCategories = async () => {
 getUsers();
 getProduct();
 getCategories();
-// var storeUsers = JSON.parse(localStorage.getItem("users")) || [];
+
 if(userLogin != null){
   nav_login.remove()
   document.getElementById('dropDown_link').innerHTML = userLogin.email;
@@ -65,10 +65,7 @@ function DisplayList(items,wrapper,columns_per_page, page){
   let product =''
   for(let i = 0; i < paginationItems.length;i++){
     let item = paginationItems[i];
-    let  url = `./profile-product/index.html?id=${item.id}`
-    // var currentUrl = window.location.pathname+"profile-product" + `?id=${item.id}`;
-    
-
+    let  url = `./profile-product/index.html?id=${item.id}`    
     product = "<div class='col-lg-3 col-sm-4'>";
     product += "<div class='card box_card'>";
     product += "<div class='box_imges' >";
@@ -132,6 +129,7 @@ function clickOrder(item) {
     localStorage.setItem('cartNumber', 1)
     document.querySelector('.numberCircle').textContent = 1;
   }
+  alert('You have add to cart, Success!!!')
   setItem(item);
 }
 
