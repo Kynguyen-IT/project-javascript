@@ -19,6 +19,26 @@
         "admin": true,
         "member": true
       }
+    },
+    {
+      "id": 1603287172401,
+      "email": "ky.nguyenq1@gmail.com",
+      "password": "1234567",
+      "etpassword": "1234567",
+      "role": {
+        "amdin": false,
+        "member": true
+      }
+    },
+    {
+      "id": 1603287230615,
+      "email": "ky.nguyenq2@gmail.com",
+      "password": "1234567",
+      "etpassword": "1234567",
+      "role": {
+        "amdin": false,
+        "member": true
+      }
     }
   ],
   "products": [
@@ -31,7 +51,7 @@
       "lat": "16.0825051",
       "lng": "108.14626659999999",
       "name": "Cơm gà 247 - Nguyễn Lương Bằng ",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -43,7 +63,7 @@
       "lat": "16.0667995",
       "lng": "108.1519675",
       "name": "Bà Ngọc - Bún Bò",
-      "quantity":0,
+      "quantity": 0,
       "price": "30000"
     },
     {
@@ -55,7 +75,7 @@
       "lat": "16.0627483",
       "lng": "108.18060229999999",
       "name": "Quán Thủy - Xôi Gà",
-      "quantity":0,
+      "quantity": 0,
       "price": "20000"
     },
     {
@@ -67,7 +87,7 @@
       "lat": "16.0569751",
       "lng": "108.17432799999999",
       "name": "Su giòn nhân vani",
-      "quantity":0,
+      "quantity": 0,
       "price": "50000"
     },
     {
@@ -79,7 +99,7 @@
       "lat": "16.0569751",
       "lng": "108.17432799999999",
       "name": "Bông lan trứng muối",
-      "quantity":0,
+      "quantity": 0,
       "price": "150000"
     },
     {
@@ -91,7 +111,7 @@
       "lat": "16.0697023",
       "lng": "108.1505674",
       "name": "Quán 71 - Cơm Ngon Bình Dân",
-      "quantity":0,
+      "quantity": 0,
       "price": "25000"
     },
     {
@@ -103,7 +123,7 @@
       "lat": "16.0472002",
       "lng": "108.2199588",
       "name": "Bún bò mệ Mui",
-      "quantity":0,
+      "quantity": 0,
       "price": "25000"
     },
     {
@@ -115,7 +135,7 @@
       "lat": "16.0235098",
       "lng": "108.2506835",
       "name": "Bánh mì xúc xích thịt chả",
-      "quantity":0,
+      "quantity": 0,
       "price": "15000"
     },
     {
@@ -127,7 +147,7 @@
       "lat": "16.0235098",
       "lng": "108.2506835",
       "name": "Bành mì xúc xích",
-      "quantity":0,
+      "quantity": 0,
       "price": "15000"
     },
     {
@@ -139,7 +159,7 @@
       "lat": "16.0654847",
       "lng": "108.2007022",
       "name": "Phở 79 - Phở Bát Đàn",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -151,7 +171,7 @@
       "lat": "16.0635051",
       "lng": "108.2301844",
       "name": "Cute lover",
-      "quantity":0,
+      "quantity": 0,
       "price": "623000"
     },
     {
@@ -163,7 +183,7 @@
       "lat": "16.0687812",
       "lng": "108.1501861",
       "name": "Minh Châu Quán",
-      "quantity":0,
+      "quantity": 0,
       "price": "20000"
     },
     {
@@ -175,7 +195,7 @@
       "lat": "16.0635051",
       "lng": "108.2301844",
       "name": "Berry white",
-      "quantity":0,
+      "quantity": 0,
       "price": "407200"
     },
     {
@@ -187,7 +207,7 @@
       "lat": "16.0763765",
       "lng": "108.1463806",
       "name": "Bánh ăn",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -199,7 +219,7 @@
       "lat": "16.0644356",
       "lng": "108.1592108",
       "name": "Ốc Chọn",
-      "quantity":0,
+      "quantity": 0,
       "price": "69000"
     },
     {
@@ -211,7 +231,7 @@
       "lat": "16.076391300000004",
       "lng": "108.1668138",
       "name": "Bánh tart trứng",
-      "quantity":0,
+      "quantity": 0,
       "price": "9000"
     },
     {
@@ -223,7 +243,7 @@
       "lat": "16.076391300000004",
       "lng": "108.1668138",
       "name": "Thập cẩm phô mai",
-      "quantity":0,
+      "quantity": 0,
       "price": "12000"
     },
     {
@@ -235,7 +255,7 @@
       "lat": "16.064000999999998",
       "lng": "108.1530887",
       "name": "Quán Thiện - Bún Chả Cá",
-      "quantity":0,
+      "quantity": 0,
       "price": "25000"
     },
     {
@@ -247,7 +267,7 @@
       "lat": "16.0662569",
       "lng": "108.15010880000001",
       "name": "Bobapop Hòa Khánh",
-      "quantity":0,
+      "quantity": 0,
       "price": "15000"
     },
     {
@@ -259,7 +279,7 @@
       "lat": "16.0227623",
       "lng": "108.2016962",
       "name": "Mộc Tea - Đà Nẵng",
-      "quantity":0,
+      "quantity": 0,
       "price": "20000"
     },
     {
@@ -271,7 +291,7 @@
       "lat": "16.0601925",
       "lng": "108.2150242",
       "name": "Gong Cha",
-      "quantity":0,
+      "quantity": 0,
       "price": "350000"
     },
     {
@@ -283,7 +303,7 @@
       "lat": "16.0704977",
       "lng": "108.1538234",
       "name": "Trà along",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -295,7 +315,7 @@
       "lat": "16.0704977",
       "lng": "108.1538234",
       "name": "Trà đào cam sả",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -307,7 +327,7 @@
       "lat": "16.061121099999998",
       "lng": "108.2191939",
       "name": "Xi Cha - Đà Nẵng",
-      "quantity":0,
+      "quantity": 0,
       "price": "26000"
     },
     {
@@ -319,7 +339,7 @@
       "lat": "16.0677861",
       "lng": "108.1481857",
       "name": "Nước cam",
-      "quantity":0,
+      "quantity": 0,
       "price": "35000"
     },
     {
@@ -331,7 +351,7 @@
       "lat": "16.0444132",
       "lng": "108.2213665",
       "name": "Goo Tea - Đà Nẵng",
-      "quantity":0,
+      "quantity": 0,
       "price": "15000"
     },
     {
@@ -343,7 +363,7 @@
       "lat": "16.0677861",
       "lng": "108.1481857",
       "name": "Nước ép cà rốt",
-      "quantity":0,
+      "quantity": 0,
       "price": "30000"
     }
   ],
