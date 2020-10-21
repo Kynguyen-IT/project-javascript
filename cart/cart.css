@@ -139,3 +139,19 @@ td.images {
 .cart_empty {
   visibility: hidden;
 }
+.title_order {
+    text-align: center;
+    margin: 3px auto 40px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #ea8025;
+    border-bottom: 2px solid;
+    width: 400px;
+    font-family: 'Bebas Neue';
+    font-size: 40px;
+}
+
+
+.modal-title {
+    margin: auto;
+}

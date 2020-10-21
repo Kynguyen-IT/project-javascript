@@ -53,7 +53,6 @@ function changeQuantity(method, id){
         newCart = cartItems.map(item => item.id === id ? {...item, quantity: item.quantity + 1} : item)
     }
     newCart = newCart.filter(i => i != null);
-   
     cartItems = [...newCart];
     newCart = newCart.reduce((a,b)=> (a[b.id] = b,a), {})
 
@@ -65,6 +64,7 @@ function changeQuantity(method, id){
 
 function clearCart() {
     localStorage.removeItem('cart');
+    localStorage.removeItem('cartNumber');
     displayCartItem();
 }
 

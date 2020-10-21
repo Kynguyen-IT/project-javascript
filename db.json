@@ -354,11 +354,6 @@
       "name": "Food"
     },
     {
-      "id": "-MF_0RZr1X5o6SXeHBK3",
-      "image": "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped887723767.jpg?alt=media&token=19a80c83-43a6-4330-9120-43f90db87bd7",
-      "name": "Wine"
-    },
-    {
       "id": "-MF_12QQUHsVylRLTU40",
       "image": "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped498308865.jpg?alt=media&token=3d521261-bfbf-45ea-ae8e-90b33083a705",
       "name": "Juice"
@@ -372,11 +367,6 @@
       "id": "-MF_AcPIPX4qXmF4QnZv",
       "image": "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped-1916485102.jpg?alt=media&token=29d619a3-2052-4691-91f9-72da246eece3",
       "name": "Milk Tea"
-    },
-    {
-      "id": "-MFamJjdmrvK_hjHJWeN",
-      "image": "https://firebasestorage.googleapis.com/v0/b/lllhkt-shop.appspot.com/o/Category%20Images%2Fcropped-2056749679.jpg?alt=media&token=7fedc0de-7807-41e5-a69e-576e2bd3ac84",
-      "name": "Vegetarian"
     }
   ]
 }

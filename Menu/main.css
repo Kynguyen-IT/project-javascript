@@ -1,0 +1,139 @@
+.title_menu {
+  text-align: center;
+  margin: 34px auto;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ea8025;
+  border-bottom: 2px solid;
+  width: 400px;
+  font-family: "Bebas Neue";
+  font-size: 35px;
+}
+.list_items {
+  background-color: #fff !important;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+.list_items .text_item.list-group-item-action {
+  background: unset;
+  border: unset;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  font-weight: 700;
+  text-transform: capitalize;
+  color: #000;
+}
+.list_items .text_item.list-group-item-action:hover {
+  background-color: #ececec;
+}
+.list_items .router-link-active {
+  color: #ea8025 !important;
+}
+.box_items {
+  border-left: 2px solid #f57100;
+}
+
+.active {
+  color: #ea8025 !important;
+}
+.box_card {
+  margin-bottom: 30px;
+  border: unset;
+  border-radius: unset;
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+}
+.box_image_item {
+  width: 100%;
+  height: 250px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: 0;
+  padding: 0;
+  box-shadow: 4px 7px 7px 0 rgba(0, 0, 0, 0.05);
+}
+.title_item {
+  text-transform: capitalize;
+  text-decoration: none;
+  color: #191919;
+  font-family: "Bebas Neue";
+  font-size: 18px;
+  max-width: 231px;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+}
+.title_item:hover {
+  color: #ea8025;
+  text-decoration: none;
+  transition: 0.5s;
+}
+.text_item {
+  font-size: 22px;
+  font-family: "Bebas Neue";
+  color: #ea8025;
+}
+.btn_button {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  display: inline-block;
+  background: transparent;
+  vertical-align: middle;
+  border: 2px solid #ea8025;
+  padding: 6px 15px;
+  background-color: #ea8025;
+  border-radius: unset;
+}
+.btn_button:hover {
+  position: relative;
+  background: transparent;
+  color: #ea8025;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+}
+
+.box_loading{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0a0aad;
+  transition: 0.5s;
+  z-index: 9999;
+  visibility: hidden;
+}
+
+.loader {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #ea8025;
+  width: 80px;
+  height: 80px;
+  animation: spin 2s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
