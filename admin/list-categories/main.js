@@ -22,7 +22,6 @@ function previewFile() {
       document.querySelector(
         `.box_img_add`
       ).style.backgroundImage = `url(${reader.result})`;
-   
     },
     false
   );
@@ -43,12 +42,14 @@ function onFileSelected(event) {
 }
 
 function displayTable() {
-  var cate = JSON.parse(localStorage.getItem("categories"));
-  list.innerHTML = "";
-  var item = "";
-  cate.map((category) => {
-    let image = `img-${category.id}`;
-    item = `
+  fetch(`https://fooddy-server.herokuapp.com/categories`)
+    .then((res) => res.json())
+    .then((data) => {
+      list.innerHTML = "";
+      var item = "";
+      data.map((category) => {
+        let image = `img-${category.id}`;
+        item = `
       <tr>
         <td class="images">
             <div class="box_img_cate ${image}"></div>
@@ -61,48 +62,60 @@ function displayTable() {
         </td>
       </tr>  
     `;
-    list.innerHTML += item;
-    document.querySelector(
-      `.${image}`
-    ).style.backgroundImage = `url(${category.image})`;
-    document
-      .getElementById("openEditModal" + category.id)
-      .setAttribute("onclick", `openEditModal("${category.id}")`);
-    document
-    .getElementById("delete" + category.id)
-    .setAttribute("onclick", `deleteCate("${category.id}")`);
-  });
+        list.innerHTML += item;
+        document.querySelector(
+          `.${image}`
+        ).style.backgroundImage = `url(${category.image})`;
+        document
+          .getElementById("openEditModal" + category.id)
+          .setAttribute("onclick", `openEditModal("${category.id}")`);
+        document
+          .getElementById("delete" + category.id)
+          .setAttribute("onclick", `deleteCate("${category.id}")`);
+      });
+    });
 }
 
-function loadData(id) { 
-  var cate = JSON.parse(localStorage.getItem("categories"));
-  cate.map((cate) => {
-    if (cate.id == id) {
-      nameEditIp.value = cate.name;
+function loadData(id) {
+  fetch(`https://fooddy-server.herokuapp.com/categories?id=${id}`)
+    .then((res) => res.json())
+    .then((cate) => {
+      nameEditIp.value = cate[0].name;
       document.querySelector(
         `.box_img`
-      ).style.backgroundImage = `url(${cate.image})`;
-    }
-  });
+      ).style.backgroundImage = `url(${cate[0].image})`;
+    });
 }
 
 // edit cate
 function editCategory(id) {
   var nameValue = nameEditIp.value.trim();
 
-  var cateNew = categories.map((cate) =>
-    cate.id === id ? { ...cate, name: nameValue, image: imgSrc } : cate
-  )
-  localStorage.setItem("categories", JSON.stringify(cateNew))
+  fetch(`https://fooddy-server.herokuapp.com/categories/${id}`, {
+    method: 'PUT',
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify({
+      id: id,
+      name: nameValue,
+      image: imgSrc,
+  }),
+  })
+    .then((response) => response.json())
+    .then((responseJson) => console.log(responseJson));
+
   edit_success.style.visibility = "visible";
+  alert('You have Edit category, Success!!!')
   displayTable();
 }
 
 // delete cate
-function deleteCate (id){
- var cateNew = categories.filter(cate => cate.id != id)
- localStorage.setItem("categories", JSON.stringify(cateNew))
- alert('You have delete catetory success!')
+function deleteCate(id) {
+  fetch(`https://fooddy-server.herokuapp.com/categories/${id}`, {
+    method: 'DELETE'
+  })
+  alert('You have Delete category, Success!!!')
   displayTable();
 }
 
@@ -110,22 +123,31 @@ function deleteCate (id){
 function openEditModal(id) {
   loadData(id);
   document
-  .getElementById("editCategory")
-  .setAttribute("onclick", `editCategory("${id}")`);
+    .getElementById("editCategory")
+    .setAttribute("onclick", `editCategory("${id}")`);
 }
 
 // add cate
 function addCate() {
   var nameValue = nameAddIp.value.trim();
 
-  data = {
+  var data = {
     id: Date.now(),
     name: nameValue,
-    image: imgSrc
-  }
-  categories = [...categories, {...data}]
-  localStorage.setItem("categories", JSON.stringify(categories));
+    image: imgSrc,
+  };
+
+  fetch(`https://fooddy-server.herokuapp.com/categories`, {
+    method: 'POST',
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((response) => response.json())
+    .then((responseJson) => console.log(responseJson));
   add_success.style.visibility = "visible";
+  alert('You have add category, Success!!!')
   displayTable();
 }
 displayTable();

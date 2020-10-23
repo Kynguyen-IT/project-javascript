@@ -7,7 +7,6 @@ var list = document.getElementById('list_product')
 var pagination = document.getElementById('pagination')
 var nav = document.getElementById('nav')
 
-
 window.onscroll = function () { 
   if ($(window).scrollTop() >= 50) {
     nav.classList.add('scrolled')
@@ -17,27 +16,16 @@ window.onscroll = function () {
 };
 
 
-const getUsers = async () => {
-  const res = await fetch("http://localhost:3000/users")
-  const users = await res.json();
-  localStorage.setItem("users", JSON.stringify(users));
-}
+
 
 const getProduct = async () => {
-  const res = await fetch("http://localhost:3000/products")
+  const res = await fetch("https://fooddy-server.herokuapp.com/products")
   const products = await res.json();
   localStorage.setItem("products", JSON.stringify(products));
 }
 
-const getCategories = async () => {
-  const res = await fetch("http://localhost:3000/categories")
-  const categories = await res.json();
-  localStorage.setItem("categories", JSON.stringify(categories));
-}
-
-getUsers();
 getProduct();
-getCategories();
+
 
 if(userLogin != null){
   nav_login.remove()
@@ -86,7 +74,6 @@ function DisplayList(items,wrapper,columns_per_page, page){
 
 function setupPagination(items, wrapper, columns_per_page){
   wrapper.innerHTML ="";
-
   let page_count = Math.ceil(items.length/columns_per_page)
 
   for(let i = 1; i < page_count + 1; i++){
@@ -138,7 +125,7 @@ function setItem(item){
   let cartItems = localStorage.getItem("cart");
    cartItems = JSON.parse(cartItems);
 
-  fetch(`http://localhost:3000/products?id=${item}`,{
+  fetch(`https://fooddy-server.herokuapp.com/products?id=${item}`,{
   method: "GET",
   }).then(r => r.json())
   .then(item => {

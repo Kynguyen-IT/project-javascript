@@ -37,11 +37,11 @@ function checkInputs(){
     }
 
 
-    fetch("http://localhost:3000/users")
+    fetch("https://fooddy-server.herokuapp.com/users")
     .then(response => response.json())
-    .then(users.map(user => {
-      if(data.email == user.email && data.password == user.password){
-        console.log(user)
+    .then((users) => {
+      users.map(user =>{
+        if(data.email == user.email && data.password == user.password){
         localStorage.setItem("userLogin", JSON.stringify(user));
         document.getElementById('error_login').classList.add("not_show")
         window.location.pathname = '../'
@@ -49,7 +49,10 @@ function checkInputs(){
       else{
         document.getElementById('error_login').classList.add("show")
       }
-    }))
+      })
+    })
+
+    
   }
   
   function setSuccessFor(input){

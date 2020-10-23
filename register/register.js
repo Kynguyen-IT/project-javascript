@@ -27,14 +27,14 @@ async function getDataInput(){
     }
   }
   
-  fetch(`http://localhost:3000/users?email=${data.email}`, {
+  fetch(`https://fooddy-server.herokuapp.com/users?email=${data.email}`, {
     method: "GET"
   }).then(r => r.json()).then(exist => {
     if (exist.length != 0) {
       setErrorFor(email,'Email exists');
       return;
     }else{
-      fetch('http://localhost:3000/users', {
+      fetch('https://fooddy-server.herokuapp.com/users', {
         method: 'POST',
         headers: {
           'Accept': 'application/json',
