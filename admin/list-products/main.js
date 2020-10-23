@@ -151,7 +151,6 @@ function addProduct() {
   var optionValue = select_cate_add.options[select_cate_add.selectedIndex].value;
   if(nameValue != '' && priceValue != '' && optionValue != '' && imgSrc != undefined ){
     data = {
-      id: Date.now(),
       name: nameValue,
       price: priceValue,
       idCategory: optionValue,
@@ -169,7 +168,6 @@ function addProduct() {
     .then((responseJson) => console.log(responseJson));
     alert('You have Add product, Success!!!')
   }else{
-   console.log(nameValue,priceValue,optionValue,imgSrc)
    alert('You have not Add product, Error!!!')
   }
   cleatDateInput()

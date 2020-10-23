@@ -63,3 +63,106 @@
   height: calc(100vh - 70px);
   margin-top: 70px;
 }
+
+.text-capitalize {
+  font-size: 18px;
+}
+
+tr{
+  cursor: pointer !important;
+}
+
+.text_quantity {
+  max-width: 30px;
+}
+
+.cart_empty {
+  visibility: hidden;
+}
+.title_order {
+  text-align: center;
+  margin: 3px auto 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ea8025;
+  border-bottom: 2px solid;
+  width: 400px;
+  font-family: "Bebas Neue";
+  font-size: 40px;
+}
+
+.modal-title {
+  margin: auto;
+}
+
+#cartList {
+  overflow-y: scroll;
+}
+
+#cartList {
+  max-height: 30vh;
+}
+
+/*  SNACKBAR CSS */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 99999; /* Add a z-index if needed */
+  right: 5%; /* Center the snackbar */
+  bottom: 5%; /* 30px from the bottom */
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}

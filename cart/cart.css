@@ -1,66 +1,65 @@
-.title_cart{
-    display: inline-block;
-    margin: 2% auto;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color:  #333;
-    width: 100%;
-    font-size: 40px;
+.title_cart {
+  display: inline-block;
+  margin: 2% auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #333;
+  width: 100%;
+  font-size: 40px;
 }
 
 .title_cart:hover {
-    color: #ea8025;
-    text-decoration: none;
-    transition: 0.5s;
-  }
-
+  color: #ea8025;
+  text-decoration: none;
+  transition: 0.5s;
+}
 
 .cart {
-    padding-top: 20px;
-    height: 525px;
-    padding-left: 50px;
-    padding-right: 50px;
+  padding-top: 20px;
+  height: 525px;
+  padding-left: 50px;
+  padding-right: 50px;
 }
 .box_cart {
-    max-height: 351px;
-    overflow-y: auto;
-    overflow-x: hidden;
+  max-height: 351px;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 .box_image {
-    width: 100%;
-    height: auto;
+  width: 100%;
+  height: auto;
 }
 
 thead {
-    background-color: #ea8025 ;
+  background-color: #ea8025;
 }
-.text-tbhead{
-    font-size: 18px;
-    font-weight: 600;
+.text-tbhead {
+  font-size: 18px;
+  font-weight: 600;
 }
 
 .title {
-    position: absolute;
-    margin-top: 30px;
-    margin-left: 200px;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #ea8025;
-    border-bottom: 2px solid;
-    width: 100px;
-    font-size: 37px;
+  position: absolute;
+  margin-top: 30px;
+  margin-left: 200px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ea8025;
+  border-bottom: 2px solid;
+  width: 100px;
+  font-size: 37px;
 }
 
 @media only screen and (max-width: 991px) {
-    .box_image {
-        margin-bottom: 5%;
-    }
+  .box_image {
+    margin-bottom: 5%;
+  }
 
-    .title {
-        display: none;
-    }
+  .title {
+    display: none;
+  }
 }
 
 /* @media only screen and (max-width: 768px) {
@@ -70,88 +69,161 @@ thead {
 } */
 
 @media only screen and (max-width: 487px) {
-    .table{
-        display: inline-block;
-        overflow-x: scroll;
-        overflow-y: hidden;
-        height: auto;
-        white-space:nowrap
-    }
+  .table {
+    display: inline-block;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    height: auto;
+    white-space: nowrap;
+  }
 
-    button .btn {
-        padding: 1%;
-    }
+  button .btn {
+    padding: 1%;
+  }
 }
 
 .list {
-    line-height: 48px;
-    transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86), border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  line-height: 48px;
+  transition: color 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86),
+    border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 .box_img {
-    width: 50px;
-    height: 50px;
-    margin: 0 auto;
-    background-origin: unset;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin: 0 auto;
+  background-origin: unset;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 50%;
 }
 span.total {
-    float: right;
-    font-size: 22px;
-    clear: right;
-    color: #ea8025;
+  float: right;
+  font-size: 22px;
+  clear: right;
+  color: #ea8025;
 }
 .clear_cart {
-    width: 100px;
-    margin-top: 10px;
+  width: 100px;
+  margin-top: 10px;
 }
 
-th, td {
-    text-align: center !important;
+th,
+td {
+  text-align: center !important;
 }
 
 td.images {
-    text-align: -webkit-center;
+  text-align: -webkit-center;
 }
 
 .icon_button {
-    background-color: #f9c229;
-    width: 25px;
-    height: 25px;
-    padding: 4px;
-    border-radius: 50%;
+  background-color: #f9c229;
+  width: 25px;
+  height: 25px;
+  padding: 4px;
+  border-radius: 50%;
 }
 
 .btn:focus {
-    box-shadow: unset !important;
+  box-shadow: unset !important;
 }
 
 .btn i:hover {
-    background-color: #ffb000;
+  background-color: #ffb000;
 }
 
 .text_quantity {
-    max-width: 30px;
+  max-width: 30px;
 }
 
 .cart_empty {
   visibility: hidden;
 }
 .title_order {
-    text-align: center;
-    margin: 3px auto 40px;
-    text-transform: uppercase;
-    font-weight: bold;
-    color: #ea8025;
-    border-bottom: 2px solid;
-    width: 400px;
-    font-family: 'Bebas Neue';
-    font-size: 40px;
+  text-align: center;
+  margin: 3px auto 40px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ea8025;
+  border-bottom: 2px solid;
+  width: 400px;
+  font-family: "Bebas Neue";
+  font-size: 40px;
 }
 
-
 .modal-title {
-    margin: auto;
+  margin: auto;
+}
+
+#cartList {
+  overflow-y: scroll;
+}
+
+#cartList {
+  max-height: 30vh;
+}
+
+/*  SNACKBAR CSS */
+#snackbar {
+  visibility: hidden; /* Hidden by default. Visible on click */
+  min-width: 250px; /* Set a default minimum width */
+  margin-left: -125px; /* Divide value of min-width by 2 */
+  color: #fff; /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 2px; /* Rounded borders */
+  padding: 16px; /* Padding */
+  position: fixed; /* Sit on top of the screen */
+  z-index: 99999; /* Add a z-index if needed */
+  right: 5%; /* Center the snackbar */
+  bottom: 5%; /* 30px from the bottom */
+}
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+#snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+    However, delay the fade out process for 2.5 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  animation: fadein 0.5s, fadeout 0.5s 2.5s;
+}
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@keyframes fadein {
+  from {
+    bottom: 0;
+    opacity: 0;
+  }
+  to {
+    bottom: 30px;
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
+}
+@keyframes fadeout {
+  from {
+    bottom: 30px;
+    opacity: 1;
+  }
+  to {
+    bottom: 0;
+    opacity: 0;
+  }
 }

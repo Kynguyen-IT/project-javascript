@@ -17,9 +17,6 @@
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="./main.css" rel="stylesheet" />
   <link href="../template.css" rel="stylesheet" />
-  <script>
-    Admin.checkAdmin()
-</script>
 
   <link rel="stylesheet" href="../../style/bootstrap/css/bootstrap.css"/>
   <link rel="stylesheet" href="../../style/animate.css"/>
@@ -103,16 +100,19 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          Image
+                          Full Name
                         </th>
                         <th>
-                          Name
+                          Phone
                         </th>
                         <th>
-                          
+                          DatePlaced
+                        </th>
+                        <th>
+                          Status
                         </th>
                       </thead>
-                      <tbody>
+                      <tbody id="list">
                       </tbody>
                     </table>
                   </div>
@@ -125,6 +125,49 @@
       </div>
   </div>
   </div>
+
+  <div class="modal fade" id="orderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+       
+        <div class="container-fluid">
+          <h2 class="title_order mt-3">Order</h2>
+          <div class="row">
+            <div class="col-md-6 pb-3">
+              <h4 class="text-center mb-3">Information Order</h4>
+              <div>
+                <div class="mb-3 font-weight-bold">Full Name:<span class="ml-3 font-weight-light" id="nameSp"></span></div>
+                <div class="mb-3 font-weight-bold">Phone:<span class="ml-3 font-weight-light" id="phoneSp"></span></div>
+                <div class="mb-3 font-weight-bold">Email:<span class="ml-3 font-weight-light" id="emailSp"></span></div>
+                <div class="mb-3 font-weight-bold">Address:<span  class="ml-3 font-weight-light" id="addressSp"></span></div>
+                <div class="mb-3 font-weight-bold">Date:<span class="ml-3 font-weight-light" id="dateSp"></span></div>
+                <div class="mb-3 font-weight-bold">Status:<span class="ml-3 font-weight-light" id="statusSp"></span></div>
+              </div>
+              <button type="button" id="processed" class="btn btn-primary text-capitalize">Processed</button>
+            </div>
+            <div class="col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">Order Summary</h4>
+                  <p class="card-text" >You have <span id="cartNum">0</span> items in your shoping cart.</p>
+                </div>
+                <div class="card-body pt-0">
+                  <ul class="list-group list-group-flush" id="cartList">
+                  </ul>
+                  <div class="d-flex justify-content-between pt-3 pl-2 pr-2">
+                    <span class="font-weight-bold">Total:</span>
+                    <span class="font-weight-bold" id="totalShowOrder">0</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="snackbar" class="bg-success"></div>
 
   <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
   <script src="../../style/bootstrap/js/popper.min.js"></script>

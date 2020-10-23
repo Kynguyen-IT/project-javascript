@@ -15,7 +15,21 @@ window.onscroll = function () {
   }
 };
 
+const showAlert = (message, status) => {
+  var x = document.getElementById("snackbar");
+  x.innerHTML = message;
+ 
+  if (status == "success") {
+    x.classList.add("bg-success");
+  } else {
+    x.classList.add("bg-danger");
+  }
 
+  x.classList.add("show");
+  setTimeout(function () {
+    x.classList.remove("show");
+  }, 3000);
+};
 
 
 const getProduct = async () => {
@@ -105,7 +119,10 @@ function onLoadCartNumber(){
 }
 
 function clickOrder(item) {
-  let productNumber = localStorage.getItem('cartNumber')
+  if(userLogin == null){
+    showAlert('You must be logged in to your account, Error!!!',"error")
+  }else{
+    let productNumber = localStorage.getItem('cartNumber')
 
   productNumber = parseInt(productNumber)
 
@@ -116,8 +133,9 @@ function clickOrder(item) {
     localStorage.setItem('cartNumber', 1)
     document.querySelector('.numberCircle').textContent = 1;
   }
-  alert('You have add to cart, Success!!!')
+  showAlert('You have add to cart, Success!!!',"success")
   setItem(item);
+  } 
 }
 
 

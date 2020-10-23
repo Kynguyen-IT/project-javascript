@@ -132,7 +132,6 @@ function addCate() {
   var nameValue = nameAddIp.value.trim();
 
   var data = {
-    id: Date.now(),
     name: nameValue,
     image: imgSrc,
   };

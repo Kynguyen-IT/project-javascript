@@ -12,6 +12,16 @@
 .list_items {
   background-color: #fff !important;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  flex-direction: column-reverse !important;
+}
+
+@media only screen and (max-width: 991px) {
+  .list_items {
+    flex-direction: row !important;
+    flex-direction: row-reverse !important;
+    margin-bottom: 5% !important;
+  }
+
 }
 .list_items .text_item.list-group-item-action {
   background: unset;
@@ -37,9 +47,10 @@
 }
 .box_card {
   margin-bottom: 30px;
-  border: unset;
-  border-radius: unset;
+  border: unset !important;
+  border-radius: unset ;
   box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.05);
+  
 }
 .box_image_item {
   width: 100%;

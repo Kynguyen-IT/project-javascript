@@ -38,6 +38,7 @@ function DisplayListCate() {
         row = `<a class="list-group-item list-group-item-action text_item" href="./index.html?id=${cate.id}">${cate.name}</a>`;
         list_show_cate.innerHTML += row;
       });
+          list_show_cate.innerHTML += `<a  class="list-group-item list-group-item-action text_item active" href="./" >all products</a>`
     });
 }
 
@@ -49,7 +50,7 @@ function DisplayListProductById(id) {
       let product = "";
       products.map((item) => {
         let url = `./profile-product/index.html?id=${item.id}`;
-        product = "<div class='col-lg-4 col-sm-4'>";
+        product = "<div class='col-lg-4 col-md-6 col-sm-12'>";
         product += "<div class='card box_card'>";
         product += "<div class='box_imges' >";
         product +=
@@ -87,7 +88,7 @@ function DisPlayAllListProduct() {
     let product = "";
     products.map((item) => {
       let url = `./profile-product/index.html?id=${item.id}`;
-      product = "<div class='col-lg-4 col-sm-4'>";
+      product = "<div class='col-lg-4 col-md-6 col-sm-6'>";
       product += "<div class='card box_card'>";
       product += "<div class='box_imges' >";
       product +=
