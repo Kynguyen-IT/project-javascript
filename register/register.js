@@ -14,10 +14,13 @@ form.addEventListener("submit", (e) => {
 });
 
 async function getDataInput() {
+
+  var url_image = 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSteItzPyeDKBxyWiOA8xrPZXIlxOYv1b1VVg&usqp=CAU'
   var data = {
     email: email.value,
     password: password.value,
     etpassword: etpassword.value,
+    image: url_image,
 
     role: {
       amdin: false,
