@@ -87,7 +87,7 @@ function DisPlayAllListProduct() {
     list_show_product.innerHTML = "";
     let product = "";
     products.map((item) => {
-      let url = `./profile-product/index.html?id=${item.id}`;
+      let url = `../profile-product/index.html?id=${item.id}`;
       product = "<div class='col-lg-4 col-md-6 col-sm-6'>";
       product += "<div class='card box_card'>";
       product += "<div class='box_imges' >";

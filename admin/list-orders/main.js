@@ -1,16 +1,16 @@
 var list = document.getElementById("list");
-var nameT = document.getElementById('nameSp')
-var phone = document.getElementById('phoneSp')
-var email = document.getElementById('emailSp')
-var address = document.getElementById('addressSp')
-var date = document.getElementById('dateSp')
-var statusT = document.getElementById('statusSp')
-var cartList = document.getElementById('cartList')
+var nameT = document.getElementById("nameSp");
+var phone = document.getElementById("phoneSp");
+var email = document.getElementById("emailSp");
+var address = document.getElementById("addressSp");
+var date = document.getElementById("dateSp");
+var statusT = document.getElementById("statusSp");
+var cartList = document.getElementById("cartList");
 
 const showAlert = (message, status) => {
   var x = document.getElementById("snackbar");
   x.innerHTML = message;
- 
+
   if (status == "success") {
     x.classList.add("bg-success");
   } else {
@@ -21,7 +21,6 @@ const showAlert = (message, status) => {
   setTimeout(function () {
     x.classList.remove("show");
   }, 3000);
-
 };
 
 function displayTable() {
@@ -43,26 +42,30 @@ function displayTable() {
         document
           .getElementById("processedOrder" + order.id)
           .setAttribute("onclick", `showProcessedOrder("${order.id}")`);
-          document
+        document
           .getElementById("processed")
-          .setAttribute("onclick", `processedOrder("${order.id}","${order.status}")`);
+          .setAttribute(
+            "onclick",
+            `processedOrder("${order.id}","${order.status}")`
+          );
       });
     });
 }
-function showProcessedOrder(id){
-  fetch(`https://fooddy-server.herokuapp.com/orders/${id}`)
-  .then((res) => res.json())
-  .then((data) => {
-    nameT.innerHTML =  data.fullName
-    email.innerHTML = data.email
-    phone.innerHTML = data.phone
-    address.innerHTML = data.address
-    date.innerHTML = data.date
-    statusT.innerHTML = data.status
 
-    let row = "";
-    data.cart.map((item)=>{
-      row = `
+function showProcessedOrder(id) {
+  fetch(`https://fooddy-server.herokuapp.com/orders/${id}`)
+    .then((res) => res.json())
+    .then((data) => {
+      nameT.innerHTML = data.fullName;
+      email.innerHTML = data.email;
+      phone.innerHTML = data.phone;
+      address.innerHTML = data.address;
+      date.innerHTML = data.date;
+      statusT.innerHTML = data.status;
+
+      let row = "";
+      data.cart.map((item) => {
+        row = `
           <li
           class="list-group-item d-flex justify-content-between text-capitalize"
           >
@@ -71,32 +74,32 @@ function showProcessedOrder(id){
               >
           </li>
           `;
-    cartList.innerHTML += row;
-    })
-    document.getElementById("totalShowOrder").innerHTML = data.total + "đ";
-  })  
+        cartList.innerHTML += row;
+      });
+      document.getElementById("totalShowOrder").innerHTML = data.total + "đ";
+    });
 }
 
-function processedOrder(id, status){
-
-  if(status == "pending"){
+function processedOrder(id, status) {
+  if (status == "pending") {
     fetch(`https://fooddy-server.herokuapp.com/orders/${id}`, {
-    method: 'PATCH',
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-    body: JSON.stringify({
-      status: 'approved'
-    }),
+      method: "PATCH",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify({
+        status: "approved",
+      }),
     })
-    .then((response) => response.json())
-    .then((responseJson) => console.log(responseJson));
-    showAlert('You have	Approved Order, Success!!!', "success")
-    displayTable();
-  }else{
-    showAlert('You have Approved Order, Errorr!!!', "error")
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson);
+        displayTable();
+      });
+    showAlert("You have	Approved Order, Success!!!", "success");
+  } else {
+    showAlert("You have Approved Order, Errorr!!!", "error");
   }
-  
 }
 
 displayTable();
