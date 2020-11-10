@@ -44,7 +44,7 @@
             </a>
           </li>
 
-          <li class="nav-items active">
+          <li class="nav-items">
             <a class="nav-link" href="../list-products">
               <i class="material-icons">content_paste</i>
               <p>List Products</p>
@@ -57,7 +57,7 @@
               <p>List Orders</p>
             </a>
           </li>
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="../list-users">
               <i class="material-icons">content_paste</i>
               <p>List Users</p>
@@ -66,12 +66,13 @@
         </ul>
       </div>
     </div>
+    
     <div class="main-panel">
       <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
         <div class="container-fluid">
           <div class="navbar-wrapper d-flex w-100 justify-content-between">
             <a class="navbar-brand" href="javascript:;">Table List</a>
-          <button type="button" class="btn btn-success mr-3 add_cate text-capitalize" data-toggle="modal" data-target="#addModal" >Add Product+</button>    
+          <button type="button" class="btn btn-success mr-3 add_cate text-capitalize" data-toggle="modal" data-target="#addModal" >Add User</button>    
           </div>
           <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
             <span class="sr-only">Toggle navigation</span>
@@ -99,7 +100,7 @@
             <div class="col-md-12">
               <div class="card">
                 <div class="card-header card-header-primary">
-                  <h4 class="card-title ">List Products</h4>
+                  <h4 class="card-title ">List Users</h4>
                   <p class="card-category"> Here is a subtitle for this table</p>
                 </div>
                 <div class="card-body">
@@ -107,13 +108,13 @@
                     <table class="table">
                       <thead class=" text-primary">
                         <th>
-                          Image
+                          Account
                         </th>
                         <th>
-                          Name
+                          Password
                         </th>
                         <th>
-                          Price
+                          Admin
                         </th>
                         <th>
                          
@@ -137,53 +138,37 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Edit Product</h4>
+          <h4 class="modal-title">Edit User</h4>
         </div>
         <div class="container-fluid">
           <div class="row box_model_main">
-            <div class="col-md-5">
+            <div class="col-md-12">
               <div class=" modal-boy">
                 <div class="container">
                   <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control"  id="editName"/>
+                    <label for="name">Account</label>
+                    <input type="text" class="form-control"  id="editAccount"/>
                   </div>
         
                   <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="number" class="form-control" id="editPrice"/>
+                    <label for="price">Password</label>
+                    <input type="text" class="form-control" id="editPassword"/>
                   </div>
         
                   <div class="form-group">
-                    <label for="price">Category</label>
-                    <select class="custom-select" id="select_cate_edit">
-                   
-                    </select>
+                    <label for="price">Admin</label>
+                    <input type="checkbox" id="editMakeAdmin" name="admin" value=true>
+                    
                   </div>
                 </div>
-        
                 <div class="modal-footer">
-                  <a class="btn btn-success" id="editProduct">
+                  <a class="btn btn-success" id="editUser">
                     Submit
                   </a>
                 </div>
               </div>
             </div>
         
-        
-            <div class="col-md-7 pr-5">
-              <div class="row box_procdut">
-                <div class="col-sm-6">
-                  <div class="box_img_edit" id="imageEdit"></div>
-                </div>
-                <div class="col-sm-6 box_product_item text-center">
-                  <span class="title_item" id="nameItem"></span>
-                  <span class="text_item" id="priceItem"></span>
-                </div>
-                <input type="file" id="file" name="file" onchange="previewFile()"  accept="image/png, image/jpeg" />
-                <label for="file">Choose a file</label>
-              </div>
-            </div>
           </div>
         </div>  
       </div>
@@ -194,49 +179,37 @@
     <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title">Add Product</h4>
+          <h4 class="modal-title">Add Users</h4>
         </div>
         <div class="container-fluid">
           <div class="row box_model_main">
-            <div class="col-md-5">
+            <div class="col-md-12">
               <div class=" modal-boy">
                 <div class="container">
                   <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" class="form-control"  id="addName"/>
+                    <label for="addAccount">Account</label>
+                    <input type="text" class="form-control"  id="addAccount"/>
                   </div>
         
                   <div class="form-group">
-                    <label for="price">Price</label>
-                    <input type="number" class="form-control" id="addPrice"/>
+                    <label for="addPassword">Password</label>
+                    <input type="text" class="form-control" id="addPassword"/>
                   </div>
         
                   <div class="form-group">
-                    <label for="price">Category</label>
-                    <select class="custom-select" id="select_cate_add">
-                   
-                    </select>
+                    <label for="addMakeAdmin">Admin</label>
+                    <input type="checkbox" id="addMakeAdmin" name="admin" value=true>
                   </div>
+
                 </div>
-        
                 <div class="modal-footer">
-                  <a class="btn btn-success" onclick="addProduct()">
+                  <a class="btn btn-success" onclick="addUser()">
                     Submit
                   </a>
                 </div>
               </div>
             </div>
         
-        
-            <div class="col-md-7 pr-5">
-              <div class="row box_procdut">
-                <div class="col-sm-12 d-flex justify-content-center">
-                  <div class="box_img_add " id="imageAdd"></div>
-                </div>
-                <input type="file" id="file" name="file" onchange="previewFile()"  accept="image/png, image/jpeg" />
-                <label for="file">Choose a file</label>
-              </div>
-            </div>
           </div>
         </div>  
       </div>
@@ -252,4 +225,3 @@
 </body>
 
 </html>
-

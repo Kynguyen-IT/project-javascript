@@ -1,34 +1,28 @@
 {
   "users": [
     {
-      "id": 1602071762966,
       "email": "ky1@gmail.com",
-      "password": "1234567",
-      "etpassword": "1234567",
+      "password": "1234asdasdsad",
       "role": {
-        "admin": true,
-        "member": true
-      }
+        "admin": true
+      },
+      "id": 1602071762966
     },
     {
-      "id": 1602072095722,
       "email": "ky.nguyenq@gmail.com",
-      "password": "1234567",
-      "etpassword": "1234567",
+      "password": "123456asdasd",
       "role": {
-        "admin": true,
-        "member": true
-      }
+        "admin": false
+      },
+      "id": 1602072095722
     },
     {
-      "id": 1603287172401,
       "email": "ky.nguyenq1@gmail.com",
       "password": "1234567",
-      "etpassword": "1234567",
       "role": {
-        "amdin": false,
-        "member": true
-      }
+        "admin": true
+      },
+      "id": 1603287172401
     },
     {
       "id": 1603287230615,
@@ -36,9 +30,33 @@
       "password": "1234567",
       "etpassword": "1234567",
       "role": {
-        "amdin": false,
+        "admin": false,
         "member": true
       }
+    },
+    {
+      "email": "toandeptrai123@gmail.com",
+      "password": "123456",
+      "role": {
+        "admin": true
+      },
+      "id": 1603287230617
+    },
+    {
+      "email": "nhan123@gmail.com",
+      "password": "12345667",
+      "role": {
+        "admin": false
+      },
+      "id": 1603287230619
+    },
+    {
+      "email": "pham123",
+      "password": "123123123",
+      "role": {
+        "admin": true
+      },
+      "id": 1603287230620
     }
   ],
   "products": [
