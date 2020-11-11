@@ -12,8 +12,6 @@ var email = document.getElementById("email");
 var phone = document.getElementById("phone");
 var address = document.getElementById("address");
 
-
-
 function getTotal() {
   let total = cartItems.reduce(
     (acc, cum) => acc + parseInt(cum.price * cum.quantity),
@@ -32,7 +30,7 @@ function showItems() {
 const showAlert = (message, status) => {
   var x = document.getElementById("snackbar");
   x.innerHTML = message;
- 
+
   if (status == "success") {
     x.classList.add("bg-success");
   } else {
@@ -43,7 +41,6 @@ const showAlert = (message, status) => {
   setTimeout(function () {
     x.classList.remove("show");
   }, 3000);
-
 };
 
 function getQuantity() {
@@ -166,15 +163,15 @@ const openCheckout = () => {
 };
 
 function save() {
-  let nameV = fullName.value.trim()
-  let emailV = email.value.trim()
-  let phoneV = phone.value.trim()
-  let addressV = address.value.trim()
+  let nameV = fullName.value.trim();
+  let emailV = email.value.trim();
+  let phoneV = phone.value.trim();
+  let addressV = address.value.trim();
   var d = new Date();
 
-  var date = d.toLocaleString() 
+  var date = d.toLocaleString();
 
-  var shipping = { 
+  var shipping = {
     fullName: nameV,
     email: emailV,
     phone: phoneV,
@@ -182,30 +179,38 @@ function save() {
     address: addressV,
     status: "pending",
     date: date,
-    cart: cartItems
-  }
-  if(nameV != ''&& emailV != ''&& phoneV != ''&& address!=''&& cartItems != []){
+    cart: cartItems,
+  };
+  if (
+    nameV != "" &&
+    emailV != "" &&
+    phoneV != "" &&
+    address != "" &&
+    cartItems != []
+  ) {
     fetch(`https://fooddy-server.herokuapp.com/orders`, {
-    method: 'POST',
-    headers: {
-      "Content-type": "application/json; charset=UTF-8",
-    },
-    body: JSON.stringify(shipping),
+      method: "POST",
+      headers: {
+        "Content-type": "application/json; charset=UTF-8",
+      },
+      body: JSON.stringify(shipping),
     })
-    .then((response) => response.json())
-    .then((responseJson) => console.log(responseJson));
-  
-    localStorage.removeItem('cart')
-    localStorage.removeItem('cartNumber')
-    document.getElementById("your_cart").textContent = `You have ${
-      quantity || 0
-    } items in your cart`;
-    showAlert('You have order, Success!!!', "success")
-    displayCartItem();
-  } else{
-    showAlert('You have not order, Error!!!', "error")
-  }
+      .then((response) => response.json())
+      .then((responseJson) => console.log(responseJson));
 
+    localStorage.removeItem("cart");
+    localStorage.removeItem("cartNumber");
+    document.getElementById("your_cart").textContent = `You have ${
+      getQuantity() || 0
+    } items in your cart`;
+    showAlert("Order Successfully!!!", "success");
+    displayCartItem();
+    getQuantity();
+    document.getElementById("total").innerHTML = 0;
+    $("#showcheckout").modal("hide")
+  } else {
+    showAlert("Error when create order!!!", "error");
+  }
 }
 
 displayCartItem();
