@@ -8,7 +8,7 @@ var accessAdminAdd = document.getElementById('addMakeAdmin')
 var a;
 
 function displayTable() {
-    fetch(`http://localhost:3000/users`)
+    fetch(`https://fooddy-server.herokuapp.com/users`)
       .then((res) => res.json())
       .then((data) => {
         list.innerHTML = "";
@@ -50,7 +50,7 @@ function displayTable() {
           }
       }
       
-      fetch(`http://localhost:3000/users`, {
+      fetch(`https://fooddy-server.herokuapp.com/users`, {
       method: 'POST',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -87,7 +87,7 @@ function displayTable() {
     var passwordValue = passwordEdit.value.trim();
     var adminValue = accessAdminEdit.checked;
     if(accountValue != '' && passwordValue != ''){
-      fetch(`http://localhost:3000/users/${id}`, {
+      fetch(`https://fooddy-server.herokuapp.com/users/${id}`, {
       method: 'PUT',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -111,7 +111,7 @@ function displayTable() {
   }
 
   function deleteProduct(id){
-    fetch(`http://localhost:3000/users/${id}`, {
+    fetch(`https://fooddy-server.herokuapp.com/users/${id}`, {
       method: 'DELETE'
     })
     alert('You have Delete user, Success!!!')
