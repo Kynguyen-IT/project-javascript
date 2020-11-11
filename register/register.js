@@ -23,7 +23,7 @@ async function getDataInput() {
     image: url_image,
 
     role: {
-      amdin: false,
+      admin: false,
       member: true,
     },
   };

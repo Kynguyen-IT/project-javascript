@@ -12,6 +12,8 @@ var email = document.getElementById("email");
 var phone = document.getElementById("phone");
 var address = document.getElementById("address");
 
+
+
 function getTotal() {
   let total = cartItems.reduce(
     (acc, cum) => acc + parseInt(cum.price * cum.quantity),
@@ -195,6 +197,9 @@ function save() {
   
     localStorage.removeItem('cart')
     localStorage.removeItem('cartNumber')
+    document.getElementById("your_cart").textContent = `You have ${
+      quantity || 0
+    } items in your cart`;
     showAlert('You have order, Success!!!', "success")
     displayCartItem();
   } else{

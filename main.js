@@ -102,7 +102,7 @@ function DisplayList(items, wrapper, columns_per_page, page) {
 function setupPagination(items, wrapper, columns_per_page) {
   wrapper.innerHTML = "";
   let page_count = Math.ceil(items.length / columns_per_page);
-
+  console.log(page_count)
   for (let i = 1; i < page_count + 1; i++) {
     let btn = PaginationBtn(i, items);
     wrapper.appendChild(btn);
@@ -129,7 +129,7 @@ function onLoadCartNumber() {
   }
 }
 
-function clickOrder(item) {
+function clickOrder(id) {
   if (userLogin == null) {
     showAlert("You must be logged in to your account, Error!!!", "error");
   } else {
@@ -145,15 +145,15 @@ function clickOrder(item) {
       document.querySelector(".numberCircle").textContent = 1;
     }
     showAlert("You have add to cart, Success!!!", "success");
-    setItem(item);
+    setItem(id);
   }
 }
 
-function setItem(item) {
+function setItem(id) {
   let cartItems = localStorage.getItem("cart");
   cartItems = JSON.parse(cartItems);
 
-  fetch(`https://fooddy-server.herokuapp.com/products?id=${item}`, {
+  fetch(`https://fooddy-server.herokuapp.com/products?id=${id}`, {
     method: "GET",
   })
     .then((r) => r.json())
