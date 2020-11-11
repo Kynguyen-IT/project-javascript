@@ -201,7 +201,6 @@ function save() {
     showAlert('You have not order, Error!!!', "error")
   }
 
-
 }
 
 displayCartItem();

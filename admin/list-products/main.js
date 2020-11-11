@@ -42,7 +42,6 @@ function previewFile() {
 }
 
 function displayTable() {
-  
   fetch(`https://fooddy-server.herokuapp.com/products`)
     .then((res) => res.json())
     .then((data) => {
@@ -50,32 +49,30 @@ function displayTable() {
        var item = "";
       data.map((product)=>{
         let image = `img-${product.id}`;
-    item = `
-    <tr>
-      <td class="images">
-          <div class="box_img_td ${image}"></div>
-      </td>
-      <td class="text-capitalize">${product.name}</td>
-      <td class="text-capitalize">${product.price}đ</td>
-      <td>
-       <button class="btn text-success" data-toggle="modal" data-target="#editModal" id="openEditModal${product.id}"><i class="far fa-edit"></i></button>
-       /
-      <button class="btn text-danger" id="delete${product.id}"><i class="fa fa-trash"></i></button> 
-      </td>
-    </tr>  
-  `;
+        item = `
+        <tr>
+          <td class="images">
+              <div class="box_img_td ${image}"></div>
+          </td>
+          <td class="text-capitalize">${product.name}</td>
+          <td class="text-capitalize">${product.price}đ</td>
+          <td>
+          <button class="btn text-success" onclick='openEditModal("${product.id}")' data-toggle="modal" data-target="#editModal" ><i class="far fa-edit"></i></button>
+          /
+          <button class="btn text-danger" onclick='deleteProduct("${product.id}")'><i class="fa fa-trash"></i></button> 
+          </td>
+        </tr>  
+      `;
     list.innerHTML += item;
     document.querySelector(
       `.${image}`
     ).style.backgroundImage = `url(${product.image})`;
-    document
-      .getElementById("openEditModal" + product.id)
-      .setAttribute("onclick", `openEditModal("${product.id}")`);
-    document
-    .getElementById("delete" + product.id)
-    .setAttribute("onclick", `deleteProduct("${product.id}")`);
       })
     });
+}
+
+function edit(id){
+  console.log(id)
 }
 
 // load data in edit modal
