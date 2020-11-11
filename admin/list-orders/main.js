@@ -31,28 +31,27 @@ function displayTable() {
       var item = "";
       data.map((order) => {
         item = `
-        <tr id="processedOrder${order.id}"  data-toggle="modal" data-target="#orderModal">
+        <tr id="Order"  data-toggle="modal" data-target="#orderModal">
         <td class="text-capitalize">${order.fullName}</td>
         <td class="text-capitalize">${order.phone}</td>
         <td class="text-capitalize">${order.date}</td>
         <td class="text-capitalize">${order.status}</td>
+        <td><button class="btn text-danger" onclick = "deleteOrder('${order.id}')" id="delete"><i class="fa fa-trash"></i></button></td> 
+        <td><button class="btn text-danger" id="processedOrder${order.id}" ><i class="fas fa-car"></i></button> </td>
         </tr>  
       `;
         list.innerHTML += item;
         document
           .getElementById("processedOrder" + order.id)
           .setAttribute("onclick", `showProcessedOrder("${order.id}")`);
-        document
-          .getElementById("processed")
-          .setAttribute(
-            "onclick",
-            `processedOrder("${order.id}","${order.status}")`
-          );
+        
       });
     });
 }
 
+
 function showProcessedOrder(id) {
+  
   fetch(`https://fooddy-server.herokuapp.com/orders/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -74,11 +73,17 @@ function showProcessedOrder(id) {
               >
           </li>
           `;
-        cartList.innerHTML += row;
+        cartList.innerHTML = row;
       });
+      document
+          .getElementById("processed")
+          .setAttribute(
+            "onclick",
+            `processedOrder("${data.id}","${data.status}")`
+          );
       document.getElementById("totalShowOrder").innerHTML = data.total + "đ";
     });
-}
+};
 
 function processedOrder(id, status) {
   if (status == "pending") {
@@ -100,6 +105,12 @@ function processedOrder(id, status) {
   } else {
     showAlert("You have Approved Order, Errorr!!!", "error");
   }
+};
+function deleteOrder(id){
+  fetch(`https://fooddy-server.herokuapp.com/orders/${id}`, {
+    method: 'DELETE'
+  })
+  alert('You have Delete order, Success!!!')
+  displayTable() 
 }
-
 displayTable();
