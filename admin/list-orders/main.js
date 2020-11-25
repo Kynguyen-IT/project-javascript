@@ -36,14 +36,14 @@ function displayTable() {
         <td class="text-capitalize">${order.phone}</td>
         <td class="text-capitalize">${order.date}</td>
         <td class="text-capitalize">${order.status}</td>
-        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder + ${order.id}" ><i class="fas fa-car"></i></button> </td>
+        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder-${order.id}" ><i class="fas fa-car"></i></button> </td>
         <td><button class="btn text-danger" onclick = "deleteOrder('${order.id}')" id="delete"><i class="fa fa-trash"></i></button></td> 
         </tr>  
       `;
         list.innerHTML += item;
         document
-          .getElementById(`processedOrder + ${order.id}`)
-          .setAttribute("onclick", showProcessedOrder(`${order.id}`)); 
+          .getElementById(`processedOrder-${order.id}`)
+          .setAttribute("onclick", `showProcessedOrder("${order.id}")`); 
       });
     });
 }
@@ -71,7 +71,7 @@ function showProcessedOrder(id) {
               >
           </li>
           `;
-        cartList.innerHTML = row;
+        cartList.innerHTML += row;
       });
       document
           .getElementById("processed")
