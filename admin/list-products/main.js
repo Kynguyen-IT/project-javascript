@@ -42,7 +42,7 @@ function previewFile() {
 }
 
 function displayTable() {
-  fetch(`https://fooddy-server.herokuapp.com/products`)
+  fetch(`https://shynn.works/api/products`)
     .then((res) => res.json())
     .then((data) => {
       list.innerHTML = "";
@@ -77,7 +77,7 @@ function edit(id){
 
 // load data in edit modal
 function loadData(id){
-  fetch(`https://fooddy-server.herokuapp.com/products?id=${id}`)
+  fetch(`https://shynn.works/api/products?id=${id}`)
   .then((res) => res.json())
   .then((data) => {
     data.map((product)=>{
@@ -92,7 +92,7 @@ function loadData(id){
 }
 // show category in selete
 function showCategory(select) {
-  fetch(`https://fooddy-server.herokuapp.com/categories`)
+  fetch(`https://shynn.works/api/categories`)
     .then((res) => res.json())
     .then((data) => {
       select.innerHTML = '';
@@ -120,7 +120,7 @@ function editProduct(id){
   var optionValue = select_cate_edit.options[select_cate_edit.selectedIndex].value;
 
   if(nameValue != '' && priceValue != '' && optionValue != '' && imgSrc != undefined ){
-    fetch(`https://fooddy-server.herokuapp.com/products/${id}`, {
+    fetch(`https://shynn.works/api/products/${id}`, {
     method: 'PUT',
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -154,7 +154,7 @@ function addProduct() {
       image: imgSrc
     }
     
-    fetch(`https://fooddy-server.herokuapp.com/products`, {
+    fetch(`https://shynn.works/api/products`, {
     method: 'POST',
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -183,7 +183,7 @@ function cleatDateInput(){
 
 // detele product 
 function deleteProduct(id){
-  fetch(`https://fooddy-server.herokuapp.com/products/${id}`, {
+  fetch(`https://shynn.works/api/products/${id}`, {
     method: 'DELETE'
   })
   alert('You have Delete product, Success!!!')

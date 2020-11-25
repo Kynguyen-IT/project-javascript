@@ -40,7 +40,7 @@ function previewFile() {
       image_member.style.backgroundImage = `url(${reader.result})`;
 
       console.log(userLogin.id);
-      fetch(`https://fooddy-server.herokuapp.com/users/${userLogin.id}`, {
+      fetch(`https://shynn.works/api/users/${userLogin.id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -51,6 +51,7 @@ function previewFile() {
       })
         .then((response) => response.json())
         .then((responseJson) => {
+          console.log(responseJson)
           localStorage.setItem("userLogin", JSON.stringify(responseJson));
         });
     },
@@ -63,7 +64,7 @@ function previewFile() {
 }
 
 function displayData() {
-  fetch(`https://fooddy-server.herokuapp.com/users/${userLogin.id}`)
+  fetch(`https://shynn.works/api/users/${userLogin.id}`)
     .then((res) => res.json())
     .then((user) => {
       if (user["image"] !== null && user["image"] !== undefined) {
@@ -97,7 +98,7 @@ function displayData() {
 }
 
 function openEdit() {
-  fetch(`https://fooddy-server.herokuapp.com/users/${userLogin.id}`)
+  fetch(`https://shynn.works/api/users/${userLogin.id}`)
     .then((res) => res.json())
     .then((user) => {
       if (
@@ -137,7 +138,7 @@ function update() {
       address: addressValue,
     };
 
-    fetch(`https://fooddy-server.herokuapp.com/users/${userLogin.id}`, {
+    fetch(`https://shynn.works/api/users/${userLogin.id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

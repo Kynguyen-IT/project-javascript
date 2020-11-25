@@ -188,7 +188,7 @@ function save() {
     address != "" &&
     cartItems != []
   ) {
-    fetch(`https://fooddy-server.herokuapp.com/orders`, {
+    fetch(`https://shynn.works/api/orders`, {
       method: "POST",
       headers: {
         "Content-type": "application/json; charset=UTF-8",

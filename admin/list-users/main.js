@@ -8,7 +8,7 @@ var accessAdminAdd = document.getElementById('addMakeAdmin')
 var a;
 
 function displayTable() {
-    fetch(`https://fooddy-server.herokuapp.com/users`)
+    fetch(`https://shynn.works/api/users`)
       .then((res) => res.json())
       .then((data) => {
         list.innerHTML = "";
@@ -50,7 +50,7 @@ function displayTable() {
           }
       }
       
-      fetch(`https://fooddy-server.herokuapp.com/users`, {
+      fetch(`https://shynn.works/api/users`, {
       method: 'POST',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -69,7 +69,7 @@ function displayTable() {
   function openEditUser(id){
       document.getElementById("editUser")
       .setAttribute("onclick", `editUser("${id}")`);
-    fetch(`https://fooddy-server.herokuapp.com/users?id=${id}`)
+    fetch(`https://shynn.works/api/users?id=${id}`)
     .then((res) => res.json())
     .then((data) => {
       data.map((user)=>{
@@ -87,7 +87,7 @@ function displayTable() {
     var passwordValue = passwordEdit.value.trim();
     var adminValue = accessAdminEdit.checked;
     if(accountValue != '' && passwordValue != ''){
-      fetch(`https://fooddy-server.herokuapp.com/users/${id}`, {
+      fetch(`https://shynn.works/api/users/${id}`, {
       method: 'PUT',
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -111,7 +111,7 @@ function displayTable() {
   }
 
   function deleteProduct(id){
-    fetch(`https://fooddy-server.herokuapp.com/users/${id}`, {
+    fetch(`https://shynn.works/api/users/${id}`, {
       method: 'DELETE'
     })
     alert('You have Delete user, Success!!!')

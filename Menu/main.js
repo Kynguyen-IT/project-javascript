@@ -31,7 +31,7 @@ function getProduct(id) {
 function DisplayListCate() {
   list_show_cate.innerHTML = "";
   let row = "";
-  fetch(`https://fooddy-server.herokuapp.com/categories`)
+  fetch(`https://shynn.works/api/categories`)
     .then((res) => res.json())
     .then((data) => {
       data.map((cate) => {
@@ -43,7 +43,7 @@ function DisplayListCate() {
 }
 
 function DisplayListProductById(id) {
-  fetch(`https://fooddy-server.herokuapp.com/products?idCategory=${id}`)
+  fetch(`https://shynn.works/api/products?idCategory=${id}`)
     .then((res) => res.json())
     .then((products) => {
       list_show_product.innerHTML = "";
@@ -81,7 +81,7 @@ function DisplayListProductById(id) {
 }
 
 function DisPlayAllListProduct() {
-  fetch(`https://fooddy-server.herokuapp.com/products`)
+  fetch(`https://shynn.works/api/products`)
   .then((res) => res.json())
   .then((products) => {
     list_show_product.innerHTML = "";

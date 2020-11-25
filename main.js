@@ -33,7 +33,7 @@ const showAlert = (message, status) => {
 };
 
 const getProduct = async () => {
-  const res = await fetch("https://fooddy-server.herokuapp.com/products");
+  const res = await fetch("https://shynn.works/api/products");
   const products = await res.json();
   localStorage.setItem("products", JSON.stringify(products));
 };
@@ -135,9 +135,7 @@ function clickOrder(id) {
   if (userLogin == null) {
     showAlert("You must be logged in to your account, Error!!!", "error");
   } else {
-    let productNumber = localStorage.getItem("cartNumber");
-
-    productNumber = parseInt(productNumber);
+    let productNumber = parseInt(localStorage.getItem("cartNumber"));
 
     if (productNumber) {
       localStorage.setItem("cartNumber", productNumber + 1);
@@ -146,7 +144,7 @@ function clickOrder(id) {
       localStorage.setItem("cartNumber", 1);
       document.querySelector(".numberCircle").textContent = 1;
     }
-    showAlert("You have add to cart, Success!!!", "success");
+    showAlert("Success, Product added!", "success");
     setItem(id);
   }
 }
@@ -155,11 +153,12 @@ function setItem(id) {
   let cartItems = localStorage.getItem("cart");
   cartItems = JSON.parse(cartItems);
 
-  fetch(`https://fooddy-server.herokuapp.com/products?id=${id}`, {
+  fetch(`https://shynn.works/api/products?id=${id}`, {
     method: "GET",
   })
     .then((r) => r.json())
     .then((item) => {
+      console.log(cartItems)
       if (cartItems != null) {
         if (cartItems[item[0].id] == undefined) {
           cartItems = {

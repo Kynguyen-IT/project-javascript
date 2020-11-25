@@ -9,7 +9,7 @@ window.onload = function () {
 };
 
 const getProduct = (id) => {
-  fetch(`https://fooddy-server.herokuapp.com/products?id=${id}`, {
+  fetch(`https://shynn.works/api/products?id=${id}`, {
     method: "GET",
   })
     .then((r) => r.json())
@@ -53,7 +53,7 @@ function setItem(item){
     let cartItems = localStorage.getItem("cart");
      cartItems = JSON.parse(cartItems);
   
-    fetch(`https://fooddy-server.herokuapp.com/products?id=${item}`,{
+    fetch(`https://shynn.works/api/products?id=${item}`,{
     method: "GET",
     }).then(r => r.json())
     .then(item => {
