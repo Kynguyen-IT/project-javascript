@@ -69,7 +69,7 @@ function displayTable() {
   function openEditUser(id){
       document.getElementById("editUser")
       .setAttribute("onclick", `editUser("${id}")`);
-    fetch(`http://localhost:3000/users?id=${id}`)
+    fetch(`https://fooddy-server.herokuapp.com/users?id=${id}`)
     .then((res) => res.json())
     .then((data) => {
       data.map((user)=>{
