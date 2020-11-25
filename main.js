@@ -55,6 +55,8 @@ if (userLogin != null) {
 function logout() {
   localStorage.removeItem("userLogin");
   window.location.pathname = "../";
+  localStorage.removeItem('cart')
+  localStorage.removeItem('cartNumber')
 }
 
 let current_page = 1;
