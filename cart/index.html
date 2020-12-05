@@ -1,113 +1,169 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./cart.css"/>
-    <link rel="stylesheet" href="../.././style/reset.css"/>
-    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../.././style/animate.css"/>
-    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css"/>
-  <title>Fooddy</title>
-
-</head>
-<body>
-  <div class="container-fluid m-0 p-0">
-    <a href="/" class="title_cart">Fooddy</a>
-    <div class="row cart mr-0 ml-0">
-      <div class="box_image col-md-4">
-        <h4 class="title">Cart</h4>
-        <img class="img-fluid" src="../../../assets/images/Coffee-bike.jpg" alt="cart">
-        <div class="col-md-12 justify-content-between d-flex flex-column align-items-center">
-          <span id="your_cart" >You have 0 items in your cart</span>
-          <button id="clear_cart" type="button" onclick="clearCart()" class="btn btn-danger clear_cart">Clear
-            cart</button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./cart.css" />
+    <link rel="stylesheet" href="../.././style/reset.css" />
+    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../.././style/animate.css" />
+    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+    <title>Fooddy</title>
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body>
+    <div class="container-fluid m-0 p-0">
+      <a href="/" class="title_cart">Fooddy</a>
+      <div class="row cart mr-0 ml-0">
+        <div class="box_image col-md-4">
+          <h4 class="title">Cart</h4>
+          <img
+            class="img-fluid"
+            src="../../../assets/images/Coffee-bike.jpg"
+            alt="cart"
+          />
+          <div
+            class="col-md-12 justify-content-between d-flex flex-column align-items-center"
+          >
+            <span id="your_cart">You have 0 items in your cart</span>
+            <button
+              id="clear_cart"
+              type="button"
+              onclick="clearCart()"
+              class="btn btn-danger clear_cart"
+            >
+              Clear cart
+            </button>
+          </div>
         </div>
- 
-      </div>
-      <div class="container box_cart p-0 col-md-8">
-        <table class="table table-fixed">
-          <thead>
-            <tr>
-              <th scope="col" class="text-tbhead">Image</th>
-              <th scope="col" class="text-tbhead">name</th>
-              <th scope="col" class="text-tbhead">Quantity</th>
-              <th scope="col" class="text-tbhead">Price</th>
-              <th scope="col" class="text-tbhead">Subtotal</th>
-            </tr>
-          </thead>
-          <tbody class="list">
-            
-          </tbody>
-          <tfoot>
-            <tr id="cart_empty">
-              <td colspan="5">No thing in this cart.</td>
-            </tr>
-          </tfoot>
-        </table>
-      </div>
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4"></div>
-          <div class="col-md-8  mt-3 align-items-center">
-            <div class="row">
-              <div class="col-6">
-                <button data-toggle="modal" data-target="#showcheckout" onclick="openCheckout()" type="button" class="btn btn-success">Check
-                  Out</button>
-              </div>
- 
-              <div class="col-6">
-                <span class="total">Total: <span id="total">0</span> </span>
+        <div class="container box_cart p-0 col-md-8">
+          <table class="table table-fixed">
+            <thead>
+              <tr>
+                <th scope="col" class="text-tbhead">Image</th>
+                <th scope="col" class="text-tbhead">name</th>
+                <th scope="col" class="text-tbhead">Quantity</th>
+                <th scope="col" class="text-tbhead">Price</th>
+                <th scope="col" class="text-tbhead">Subtotal</th>
+              </tr>
+            </thead>
+            <tbody class="list"></tbody>
+            <tfoot>
+              <tr id="cart_empty">
+                <td colspan="5">No thing in this cart.</td>
+              </tr>
+            </tfoot>
+          </table>
+        </div>
+        <div class="container">
+          <div class="row">
+            <div class="col-md-4"></div>
+            <div class="col-md-8 mt-3 align-items-center">
+              <div class="row">
+                <div class="col-6">
+                  <button
+                    onclick="checkout()"
+                    type="button"
+                    class="btn btn-success"
+                  >
+                    Check Out
+                  </button>
+                  <!-- <button
+                    data-toggle="modal"
+                    data-target="#showcheckout"
+                    onclick="openCheckout()"
+                    type="button"
+                    class="btn btn-success"
+                  >
+                    Check Out
+                  </button> -->
+                </div>
+
+                <div class="col-6">
+                  <span class="total">Total: <span id="total">0</span>đ </span>
+                </div>
               </div>
             </div>
           </div>
         </div>
- 
       </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="showcheckout" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg" role="document">
-      <div class="modal-content">
-       
-        <div class="container-fluid">
-          <h2 class="title_order mt-3">Shipping</h2>
-          <div class="row ">
-            <div class="col-md-6 pb-3">
-              <form>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Full Name</label>
-                <input type="text" class="form-control" id="full_name" placeholder="Full Name">
+    <div
+      class="modal fade"
+      id="showcheckout"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+          <div class="container-fluid">
+            <h2 class="title_order mt-3">Shipping</h2>
+            <div class="row">
+              <div class="col-md-6 pb-3">
+                <form>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Full Name</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="full_name"
+                      placeholder="Full Name"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      aria-describedby="emailHelp"
+                      placeholder="Enter email"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Phone</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="phone"
+                      placeholder="Phone"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail1">Address</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="address"
+                      placeholder="Address"
+                    />
+                  </div>
+                  <button type="button" id="checkout-button" onclick="save()">
+                    Save
+                  </button>
+                </form>
               </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Email address</label>
-                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Phone</label>
-                <input type="text" class="form-control" id="phone" placeholder="Phone">
-              </div>
-              <div class="form-group">
-                <label for="exampleInputEmail1">Address</label>
-                <input type="text" class="form-control" id="address" placeholder="Address">
-              </div>
-
-              <button type="button" class=" d-flex m-auto btn btn-primary" onclick="save()">Save</button>
-              </form>
-            </div>
-            <div class="col-md-6">
-              <div class="card">
-                <div class="card-body">
-                  <h4 class="card-title">Order Summary</h4>
-                  <p class="card-text" >You have <span id="cartNum">0</span> items in your shoping cart.</p>
-                </div>
-                <div class="card-body pt-0">
-                  <ul class="list-group list-group-flush" id="cartList">
-                  </ul>
-                  <div class="d-flex justify-content-between pt-3 pl-2 pr-2">
-                    <span class="font-weight-bold">Total:</span>
-                    <span class="font-weight-bold" id="totalShowOrder">0</span>
+              <div class="col-md-6">
+                <div class="card mb-3">
+                  <div class="card-body">
+                    <h4 class="card-title">Order Summary</h4>
+                    <p class="card-text">
+                      You have <span id="cartNum">0</span> items in your shoping
+                      cart.
+                    </p>
+                  </div>
+                  <div class="card-body pt-0">
+                    <ul class="list-group list-group-flush" id="cartList"></ul>
+                    <div class="d-flex justify-content-between pt-3 pl-2 pr-2">
+                      <span class="font-weight-bold">Total:</span>
+                      <span class="font-weight-bold" id="totalShowOrder"
+                        >0</span
+                      >
+                    </div>
                   </div>
                 </div>
               </div>
@@ -116,14 +172,13 @@
         </div>
       </div>
     </div>
-  </div>
 
-  <div id="snackbar" class="bg-success"></div>
+    <div id="snackbar" class="bg-success"></div>
 
-  <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="../../style/bootstrap/js/popper.min.js"></script>
-  <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../assets/js/lodash.js"></script>
-  <script src="./cart.js"></script>
-</body>
+    <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../style/bootstrap/js/popper.min.js"></script>
+    <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/lodash.js"></script>
+    <script src="./cart.js"></script>
+  </body>
 </html>

@@ -33,7 +33,7 @@ const showAlert = (message, status) => {
 };
 
 const getProduct = async () => {
-  const res = await fetch("https://fooddy-server.herokuapp.com/products");
+  const res = await fetch("https://shynn.works/foody/products");
   const products = await res.json();
   localStorage.setItem("products", JSON.stringify(products));
 };
@@ -155,7 +155,7 @@ function setItem(id) {
   let cartItems = localStorage.getItem("cart");
   cartItems = JSON.parse(cartItems);
 
-  fetch(`https://fooddy-server.herokuapp.com/products?id=${id}`, {
+  fetch(`https://shynn.works/foody/products?id=${id}`, {
     method: "GET",
   })
     .then((r) => r.json())

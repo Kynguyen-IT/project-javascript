@@ -42,7 +42,7 @@ function onFileSelected(event) {
 }
 
 function displayTable() {
-  fetch(`https://fooddy-server.herokuapp.com/categories`)
+  fetch(`https://shynn.works/foody/categories`)
     .then((res) => res.json())
     .then((data) => {
       list.innerHTML = "";
@@ -77,7 +77,7 @@ function displayTable() {
 }
 
 function loadData(id) {
-  fetch(`https://fooddy-server.herokuapp.com/categories?id=${id}`)
+  fetch(`https://shynn.works/foody/categories?id=${id}`)
     .then((res) => res.json())
     .then((cate) => {
       nameEditIp.value = cate[0].name;
@@ -91,7 +91,7 @@ function loadData(id) {
 function editCategory(id) {
   var nameValue = nameEditIp.value.trim();
 
-  fetch(`https://fooddy-server.herokuapp.com/categories/${id}`, {
+  fetch(`https://shynn.works/foody/categories/${id}`, {
     method: 'PUT',
     headers: {
       "Content-type": "application/json; charset=UTF-8",
@@ -112,7 +112,7 @@ function editCategory(id) {
 
 // delete cate
 function deleteCate(id) {
-  fetch(`https://fooddy-server.herokuapp.com/categories/${id}`, {
+  fetch(`https://shynn.works/foody/categories/${id}`, {
     method: 'DELETE'
   })
   alert('You have Delete category, Success!!!')
@@ -136,7 +136,7 @@ function addCate() {
     image: imgSrc,
   };
 
-  fetch(`https://fooddy-server.herokuapp.com/categories`, {
+  fetch(`https://shynn.works/foody/categories`, {
     method: 'POST',
     headers: {
       "Content-type": "application/json; charset=UTF-8",

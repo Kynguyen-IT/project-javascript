@@ -35,7 +35,7 @@ function checkInputs(){
     }
 
 
-    fetch("https://fooddy-server.herokuapp.com/users")
+    fetch("https://shynn.works/foody/users")
     .then(response => response.json())
     .then((users) => {
       users.map(user =>{

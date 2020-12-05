@@ -24,7 +24,7 @@ const showAlert = (message, status) => {
 };
 
 function displayTable() {
-  fetch(`https://fooddy-server.herokuapp.com/orders`)
+  fetch(`https://shynn.works/foody/orders`)
     .then((res) => res.json())
     .then((data) => {
       list.innerHTML = "";
@@ -50,7 +50,7 @@ function displayTable() {
 
 
 function showProcessedOrder(id) {
-  fetch(`https://fooddy-server.herokuapp.com/orders/${id}`)
+  fetch(`https://shynn.works/foody/orders/${id}`)
     .then((res) => res.json())
     .then((data) => {
       nameT.innerHTML = data.fullName;
@@ -85,7 +85,7 @@ function showProcessedOrder(id) {
 
 function processedOrder(id, status) {
   if (status == "pending") {
-    fetch(`https://fooddy-server.herokuapp.com/orders/${id}`, {
+    fetch(`https://shynn.works/foody/orders/${id}`, {
       method: "PATCH",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -106,7 +106,7 @@ function processedOrder(id, status) {
 };
 
 function deleteOrder(id){
-  fetch(`https://fooddy-server.herokuapp.com/orders/${id}`, {
+  fetch(`https://shynn.works/foody/orders/${id}`, {
     method: 'DELETE'
   })
   displayTable();

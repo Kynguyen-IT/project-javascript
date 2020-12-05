@@ -1,3 +1,6 @@
+var stripe = Stripe(
+  "pk_test_51HpaMfDXe7CZVgBqiIgpeMqMNVmDBr5QyKd1nfrmpqpjXzqqjkAj1FbpeV0Uf609BuYPh9ukKNTqoicusZ7laNag00Snv3xF30"
+);
 var list = document.querySelector(".list");
 let cartItems = localStorage.getItem("cart");
 let productNumber = parseInt(localStorage.getItem("cartNumber"));
@@ -63,7 +66,7 @@ function changeQuantity(method, id) {
       document.getElementById("total").textContent = 0;
       document.getElementById(
         "your_cart"
-      ).textContent = `You have 0 items in your cart`;
+      ).textContent = `You have 0 item in your cart`;
     }
     newCart = cartItems.map((item) => {
       if (item.id == id) {
@@ -143,6 +146,7 @@ function displayCartItem() {
 const openCheckout = () => {
   document.getElementById("cartNum").innerHTML = getQuantity();
   const cartList = document.getElementById("cartList");
+  cartList.innerHTML = "";
   cartItems = localStorage.getItem("cart");
   cartItems = JSON.parse(cartItems) || {};
   cartItems = Object.values(cartItems);
@@ -162,52 +166,141 @@ const openCheckout = () => {
   document.getElementById("totalShowOrder").innerHTML = getTotal() + "đ";
 };
 
+const post = (endpoint, payload) => {
+  return fetch(endpoint, {
+    method: "POST",
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
+    body: JSON.stringify(payload),
+  });
+};
+
+const checkout = () => {
+  const user = JSON.parse(localStorage.getItem("userLogin"));
+  var shipping = {
+    email: user.email,
+    total: getTotal(),
+    status: "pending",
+    cart: cartItems,
+  };
+  post(`http://localhost:3001/create-session`, shipping)
+    .then((res) => res.json())
+    .then((session) => {
+      return stripe.redirectToCheckout({ sessionId: session.id });
+    })
+    .then((result) => {
+      if (result.error) {
+        showAlert(result.error.message, "error");
+      }
+      console.log(result);
+    })
+    .catch((err) => {
+      console.error("Error: ", err);
+    });
+};
+
 function save() {
-  let nameV = fullName.value.trim();
-  let emailV = email.value.trim();
-  let phoneV = phone.value.trim();
-  let addressV = address.value.trim();
+  let nameInp = fullName.value.trim();
+  let emailInp = email.value.trim();
+  let phoneInp = phone.value.trim();
+  let addressInp = address.value.trim();
   var d = new Date();
 
   var date = d.toLocaleString();
 
-  var shipping = {
-    fullName: nameV,
-    email: emailV,
-    phone: phoneV,
-    total: getTotal(),
-    address: addressV,
-    status: "pending",
-    date: date,
-    cart: cartItems,
+  var newCustomer = {
+    fullName: nameInp,
+    email: emailInp,
+    phone: phoneInp,
+    address: addressInp,
   };
+
   if (
-    nameV != "" &&
-    emailV != "" &&
-    phoneV != "" &&
-    address != "" &&
+    nameInp != "" &&
+    emailInp != "" &&
+    phoneInp != "" &&
+    addressInp != "" &&
     cartItems != []
   ) {
-    fetch(`https://fooddy-server.herokuapp.com/orders`, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json; charset=UTF-8",
-      },
-      body: JSON.stringify(shipping),
-    })
-      .then((response) => response.json())
-      .then((responseJson) => console.log(responseJson));
+    post(`http://localhost:3001/create-customer`, newCustomer)
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res);
+        return post(`http://localhost:3001/create-session`, {
+          total: getTotal(),
+          status: "pending",
+          date: date,
+          cart: cartItems,
+          customer: res.id,
+        });
+      })
+      .then((res) => res.json())
+      .then((session) => {
+        // console.log(session);
+        return stripe.redirectToCheckout({ sessionId: session.id });
+      })
+      .then((result) => {
+        if (result.error) {
+          showAlert(result.error.message, "error");
+        }
+        console.log(result);
+      })
+      .catch((err) => {
+        console.error("Error: ", err);
+      });
+    // fetch(`https://shynn.works/foody/orders`, {
+    // const fetchOrder = post(`http://localhost:3001/orders`, shipping);
+    // const fetchCheckout = post(
+    //   `http://localhost:3001/create-session`,
+    //   shipping
+    // );
 
-    localStorage.removeItem("cart");
-    localStorage.removeItem("cartNumber");
-    document.getElementById("your_cart").textContent = `You have ${
-      getQuantity() || 0
-    } items in your cart`;
-    showAlert("Order Successfully!!!", "success");
-    displayCartItem();
-    getQuantity();
-    document.getElementById("total").innerHTML = 0;
-    $("#showcheckout").modal("hide")
+    // Promise.all([fetchOrder, fetchCheckout])
+    //   .then((res) => res[1].json())
+    //   .then((session) => {
+    //     return stripe.redirectToCheckout({ sessionId: session.id });
+    //   })
+    //   .then((result) => {
+    //     if (result.error) {
+    //       showAlert(result.error.message, "error");
+    //     }
+    //     console.log(result);
+    //   })
+    //   .catch((err) => {
+    //     console.error("Error: ", err);
+    //   });
+
+    // fetch(`http://localhost:3001/create-session`, {
+    //   method: "POST",
+    //   headers: {
+    //     "Content-type": "application/json; charset=UTF-8",
+    //   },
+    //   body: JSON.stringify(shipping),
+    // })
+    //   .then((response) => response.json())
+    //   .then((session) => {
+    //     console.log(session);
+    //     return stripe.redirectToCheckout({ sessionId: session.id });
+    //   })
+    //   .then(function (result) {
+    //     if (result.error) {
+    //       showAlert(result.error.message, "error");
+    //     }
+    //   })
+    //   .catch(function (error) {
+    //     console.error("Error:", error);
+    //   });
+
+    // localStorage.removeItem("cart");
+    // localStorage.removeItem("cartNumber");
+    // document.getElementById("your_cart").textContent = `You have ${
+    //   getQuantity() || 0
+    // } items in your cart`;
+    // showAlert("Order Successfully!!!", "success");
+    // displayCartItem();
+    // getQuantity();
+    // document.getElementById("total").innerHTML = 0;
   } else {
     showAlert("Error when create order!!!", "error");
   }

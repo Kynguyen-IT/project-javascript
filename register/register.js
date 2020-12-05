@@ -28,7 +28,7 @@ async function getDataInput() {
     },
   };
 
-  fetch(`https://fooddy-server.herokuapp.com/users?email=${data.email}`, {
+  fetch(`https://shynn.works/foody/users?email=${data.email}`, {
     method: "GET",
   })
     .then((r) => r.json())
@@ -37,7 +37,7 @@ async function getDataInput() {
         setErrorFor(email, "Email exists");
         return;
       } else {
-        fetch("https://fooddy-server.herokuapp.com/users", {
+        fetch("https://shynn.works/foody/users", {
           method: "POST",
           headers: {
             Accept: "application/json",
