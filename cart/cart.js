@@ -184,7 +184,7 @@ const checkout = () => {
     status: "pending",
     cart: cartItems,
   };
-  post(`http://localhost:3001/create-session`, shipping)
+  post(`https://shynn.works/foody/create-session`, shipping)
     .then((res) => res.json())
     .then((session) => {
       return stripe.redirectToCheckout({ sessionId: session.id });
@@ -223,11 +223,11 @@ function save() {
     addressInp != "" &&
     cartItems != []
   ) {
-    post(`http://localhost:3001/create-customer`, newCustomer)
+    post(`https://shynn.works/foody/create-customer`, newCustomer)
       .then((res) => res.json())
       .then((res) => {
         console.log(res);
-        return post(`http://localhost:3001/create-session`, {
+        return post(`https://shynn.works/foody/create-session`, {
           total: getTotal(),
           status: "pending",
           date: date,
@@ -250,9 +250,9 @@ function save() {
         console.error("Error: ", err);
       });
     // fetch(`https://shynn.works/foody/orders`, {
-    // const fetchOrder = post(`http://localhost:3001/orders`, shipping);
+    // const fetchOrder = post(`https://shynn.works/foody/orders`, shipping);
     // const fetchCheckout = post(
-    //   `http://localhost:3001/create-session`,
+    //   `https://shynn.works/foody/create-session`,
     //   shipping
     // );
 
@@ -271,7 +271,7 @@ function save() {
     //     console.error("Error: ", err);
     //   });
 
-    // fetch(`http://localhost:3001/create-session`, {
+    // fetch(`https://shynn.works/foody/create-session`, {
     //   method: "POST",
     //   headers: {
     //     "Content-type": "application/json; charset=UTF-8",

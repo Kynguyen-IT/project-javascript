@@ -33,21 +33,22 @@ function displayTable() {
         item = `
         <tr id="Order + ${order.id}" >
         <td class="text-capitalize">${order.fullName}</td>
-        <td class="text-capitalize">${order.phone}</td>
+        <td class="text-capitalize">${order.phone ? order.phone : ""}</td>
         <td class="text-capitalize">${order.date}</td>
         <td class="text-capitalize">${order.status}</td>
-        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder + ${order.id}" ><i class="fas fa-car"></i></button> </td>
-        <td><button class="btn text-danger" onclick = "deleteOrder('${order.id}')" id="delete"><i class="fa fa-trash"></i></button></td> 
+        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder${order.id
+          }" ><i class="fas fa-car"></i></button> </td>
+        <td><button class="btn text-danger" onclick = "deleteOrder('${order.id
+          }')" id="delete"><i class="fa fa-trash"></i></button></td> 
         </tr>  
       `;
         list.innerHTML += item;
         document
-          .getElementById(`processedOrder + ${order.id}`)
-          .setAttribute("onclick", showProcessedOrder(`${order.id}`)); 
+          .getElementById(`processedOrder${order.id}`)
+          .setAttribute("onclick", `showProcessedOrder("${order.id}")`);
       });
     });
 }
-
 
 function showProcessedOrder(id) {
   fetch(`https://shynn.works/foody/orders/${id}`)
@@ -55,7 +56,7 @@ function showProcessedOrder(id) {
     .then((data) => {
       nameT.innerHTML = data.fullName;
       email.innerHTML = data.email;
-      phone.innerHTML = data.phone;
+      phone.innerHTML = data.phone || "";
       address.innerHTML = data.address;
       date.innerHTML = data.date;
       statusT.innerHTML = data.status;
@@ -74,14 +75,14 @@ function showProcessedOrder(id) {
         cartList.innerHTML = row;
       });
       document
-          .getElementById("processed")
-          .setAttribute(
-            "onclick",
-           `processedOrder("${data.id}","${data.status}")`
-          );
+        .getElementById("processed")
+        .setAttribute(
+          "onclick",
+          `processedOrder("${data.id}","${data.status}")`
+        );
       document.getElementById("totalShowOrder").innerHTML = data.total + "đ";
     });
-};
+}
 
 function processedOrder(id, status) {
   if (status == "pending") {
@@ -100,17 +101,16 @@ function processedOrder(id, status) {
         displayTable();
         // showAlert("You have	Approved Order, Success!!!", "success");
       });
-  }else{
+  } else {
     // showAlert("You have	Approved Order, Success!!!", "error");
   }
-};
+}
 
-function deleteOrder(id){
+function deleteOrder(id) {
   fetch(`https://shynn.works/foody/orders/${id}`, {
-    method: 'DELETE'
-  })
+    method: "DELETE",
+  });
   displayTable();
   showAlert("You have	Delete Order, Success!!!", "success");
 }
 displayTable();
-

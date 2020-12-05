@@ -8,7 +8,7 @@ let cartItems = JSON.parse(localStorage.getItem("cart")) || {};
 cartItems = Object.values(cartItems) || [];
 
 const onSuccess = (sid) => {
-  fetch(`http://localhost:3001/checkout-success?session_id=${sid}`, {
+  fetch(`https://shynn.works/foody/checkout-success?session_id=${sid}`, {
     method: "POST",
   })
     .then((res) => res.json())
@@ -27,7 +27,7 @@ const onSuccess = (sid) => {
           date: new Date().toLocaleString(),
           cart: cartItems,
         };
-        fetch(`http://localhost:3001/orders`, {
+        fetch(`https://shynn.works/foody/orders`, {
           method: "POST",
           headers: {
             "Content-type": "application/json; charset=UTF-8",

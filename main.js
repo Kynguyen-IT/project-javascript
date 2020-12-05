@@ -146,7 +146,7 @@ function clickOrder(id) {
       localStorage.setItem("cartNumber", 1);
       document.querySelector(".numberCircle").textContent = 1;
     }
-    showAlert("You have add to cart, Success!!!", "success");
+    showAlert("Added to cart!", "success");
     setItem(id);
   }
 }
