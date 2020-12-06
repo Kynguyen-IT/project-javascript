@@ -1,7 +1,14 @@
 window.onload = function () {
   var url_string = window.location.href;
   var url = new URL(url_string);
-  onSuccess(url.searchParams.get("session_id"));
+  fetch("https://shynn.works/foody/users?role.admin=true")
+    .then((res) => res.json())
+    .then((listAdmin) => {
+      const admins = listAdmin.map((admin) => {
+        return admin.email;
+      });
+      onSuccess(url.searchParams.get("session_id"), admins);
+    });
 };
 
 let cartItems = JSON.parse(localStorage.getItem("cart")) || {};
@@ -24,13 +31,17 @@ const showAlert = (message, status) => {
   }, 3000);
 };
 
-const onSuccess = (sid) => {
-  fetch(`hhttps://shynn.works/foody/checkout-success?session_id=${sid}`, {
+const onSuccess = (sid, admins) => {
+  fetch(`https://shynn.works/foody/checkout-success?session_id=${sid}`, {
     method: "POST",
+    body: JSON.stringify({ admins }),
+    headers: {
+      "Content-type": "application/json; charset=UTF-8",
+    },
   })
     .then((res) => res.json())
-    .then(({ session }) => {
-      // console.log(res);
+    .then(({ session, body }) => {
+      console.log(body);
       if (session.payment_status !== "paid") {
         return;
       } else {
@@ -46,7 +57,7 @@ const onSuccess = (sid) => {
             date: new Date().toLocaleString(),
             cart: cartItems,
           };
-          fetch(`hhttps://shynn.works/foody/orders`, {
+          fetch(`https://shynn.works/foody/orders`, {
             method: "POST",
             headers: {
               "Content-type": "application/json; charset=UTF-8",

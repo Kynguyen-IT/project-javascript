@@ -98,7 +98,7 @@ function clearCart() {
   localStorage.removeItem("cart");
   localStorage.removeItem("cartNumber");
   document.getElementById("your-cart").innerHTML = 0;
-  displayCartItem()
+  displayCartItem();
 }
 
 function displayCartItem() {
@@ -184,7 +184,7 @@ const post = (endpoint, payload) => {
   });
 };
 
-const checkout = () => {
+const checkout = async () => {
   const user = JSON.parse(localStorage.getItem("userLogin"));
   var shipping = {
     email: user.email,
