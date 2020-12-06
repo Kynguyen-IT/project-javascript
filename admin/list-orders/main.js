@@ -7,6 +7,10 @@ var date = document.getElementById("dateSp");
 var statusT = document.getElementById("statusSp");
 var cartList = document.getElementById("cartList");
 
+window.onload = function () {
+  checkAdmin();
+};
+
 const showAlert = (message, status) => {
   var x = document.getElementById("snackbar");
   x.innerHTML = message;

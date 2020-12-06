@@ -1,10 +1,12 @@
 const checkAdmin = () => {
-    const userLogin = JSON.parse(localStorage.getItem("userLogin"));
-  
-    if(userLogin.role.admin){
-        window.location.pathname = './admin/dashboard'
-    } else {
-        window.location.pathname = '../'
+  const userLogin = JSON.parse(localStorage.getItem("userLogin"));
+  if (userLogin.role.admin) {
+    if (window.location.pathname === "/admin/") {
+      window.location.pathname = "./admin/dashboard";
+      return;
     }
-}
-checkAdmin()
+  } else {
+    window.location.pathname = "../";
+  }
+};
+checkAdmin();

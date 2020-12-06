@@ -5,10 +5,27 @@ window.onload = function () {
 };
 
 let cartItems = JSON.parse(localStorage.getItem("cart")) || {};
+let userData = JSON.parse(localStorage.getItem("userLogin")) || {};
 cartItems = Object.values(cartItems) || [];
 
+const showAlert = (message, status) => {
+  var x = document.getElementById("snackbar");
+  x.innerHTML = message;
+
+  if (status == "success") {
+    x.classList.add("bg-success");
+  } else {
+    x.classList.add("bg-danger");
+  }
+
+  x.classList.add("show");
+  setTimeout(function () {
+    x.classList.remove("show");
+  }, 3000);
+};
+
 const onSuccess = (sid) => {
-  fetch(`https://shynn.works/foody/checkout-success?session_id=${sid}`, {
+  fetch(`hhttps://shynn.works/foody/checkout-success?session_id=${sid}`, {
     method: "POST",
   })
     .then((res) => res.json())
@@ -18,25 +35,32 @@ const onSuccess = (sid) => {
         return;
       } else {
         const { shipping, customer_email, amount_total } = session;
-        var order = {
-          fullName: shipping.name,
-          email: customer_email,
-          total: amount_total,
-          address: `${shipping.address.line1} - ${shipping.address.city} - Việt Nam`,
-          status: "pending",
-          date: new Date().toLocaleString(),
-          cart: cartItems,
-        };
-        fetch(`https://shynn.works/foody/orders`, {
-          method: "POST",
-          headers: {
-            "Content-type": "application/json; charset=UTF-8",
-          },
-          body: JSON.stringify(order),
-        })
-          .then((r) => r.json())
-          .then((res) => console.log(res));
-        console.log(session);
+        if (userData.phone) {
+          var order = {
+            fullName: shipping.name,
+            email: customer_email,
+            total: amount_total,
+            phone: userData.phone,
+            address: `${shipping.address.line1} - ${shipping.address.city} - Việt Nam`,
+            status: "pending",
+            date: new Date().toLocaleString(),
+            cart: cartItems,
+          };
+          fetch(`hhttps://shynn.works/foody/orders`, {
+            method: "POST",
+            headers: {
+              "Content-type": "application/json; charset=UTF-8",
+            },
+            body: JSON.stringify(order),
+          })
+            .then((r) => r.json())
+            .then((res) => {
+              localStorage.removeItem("cart");
+              localStorage.removeItem("cartNumber");
+              showAlert("Order Successfully!!!", "success");
+            });
+          console.log(session);
+        }
       }
     });
 };

@@ -1,146 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./main.css"/>
-    <link rel="stylesheet" href="../.././style/reset.css"/>
-    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css"/>
-    <link rel="stylesheet" href="../.././style/animate.css"/>
-    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css"/>
-  <title>Fooddy</title>
-  <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./main.css" />
+    <link rel="stylesheet" href="../.././style/reset.css" />
+    <link rel="stylesheet" href="../.././style/bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="../.././style/animate.css" />
+    <link rel="stylesheet" href="../.././style/fontAwesome/css/all.min.css" />
+    <title>Fooddy</title>
+    <link href="../favicon.ico" rel="icon" type="image/x-icon" />
+  </head>
+  <body>
+    <a href="/" class="title_profile">Fooddy</a>
 
-</head>
-<body>
-  <a href="/" class="title_profile">Fooddy</a>
-
-  <div class="content">
-    <div class=" emp-profile" >
-      <div class="row">
-        <div class="col-md-4">
-          <div class="profile-img">
-  
-            <div id="img_member" class="profile_bg"></div>
-            <div class="file btn btn-lg " >
-              Change Photo
-              <input id="file" onchange="previewFile()"  accept="image/png, image/jpeg" type="file" name="file" />
+    <div class="content">
+      <div class="emp-profile">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="profile-img">
+              <div id="img_member" class="profile_bg"></div>
+              <div class="file btn btn-lg">
+                Change Photo
+                <form
+                  id="avatarForm"
+                  onsubmit="avatarSubmit(event)"
+                  enctype="multipart/form-data"
+                >
+                  <input id="avatarInp" type="file" name="avatar" />
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="profile-head">
-            <h5 id="name_member">
-            </h5>
-            <p class="proile-rating">RANKINGS : <span>8/10</span></p>
-            <ul class="nav nav-tabs" id="myTab" role="tablist">
-              <li class="nav-item">
-                <a class="nav-link active" id="home-tab" data-toggle="tab" href="" role="tab" aria-controls="home"
-                  aria-selected="true">About</a>
-              </li>
-            </ul>
+          <div class="col-md-6">
+            <div class="profile-head">
+              <h5 id="name_member"></h5>
+              <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item">
+                  <a
+                    class="nav-link active"
+                    id="home-tab"
+                    data-toggle="tab"
+                    href=""
+                    role="tab"
+                    aria-controls="home"
+                    aria-selected="true"
+                    >About</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-2">
+            <button
+              class="profile-edit-btn"
+              data-toggle="modal"
+              data-target="#editModal"
+              onclick="openEdit()"
+            >
+              Edit Profile
+            </button>
           </div>
         </div>
-        <div class="col-md-2">
-          <button class="profile-edit-btn"  data-toggle="modal" data-target="#editModal" onclick="openEdit()">Edit Profile</button>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="profile-work">
+              <p>WORK LINK</p>
+              <a href="">Website Link</a><br />
+              <a href="">Bootsnipp Profile</a><br />
+              <a href="">Bootply Profile</a>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="tab-content profile-tab" id="myTabContent">
+              <div
+                class="tab-pane fade show active"
+                id="home"
+                role="tabpanel"
+                aria-labelledby="home-tab"
+              >
+                <div class="row">
+                  <div class="col-md-3">
+                    <label>Name:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <p id="name_show"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label>Email:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <p id="email_show"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label>Phone:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <p id="phone_show"></p>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3">
+                    <label>Address:</label>
+                  </div>
+                  <div class="col-md-9">
+                    <p id="address_show"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="profile-work">
-            <p>WORK LINK</p>
-            <a href="">Website Link</a><br />
-            <a href="">Bootsnipp Profile</a><br />
-            <a href="">Bootply Profile</a>
+    </div>
+
+    <div
+      class="modal fade"
+      id="editModal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title m-auto">Edit Profile</h4>
           </div>
-        </div>
-        <div class="col-md-8">
-          <div class="tab-content profile-tab" id="myTabContent">
-            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-              <div class="row">
-                <div class="col-md-3">
-                  <label>Name:</label>
-                </div>
-                <div class="col-md-9">
-                  <p id="name_show"></p>
-                </div>
+          <!-- <form> -->
+          <div class="modal-boy">
+            <div class="container">
+              <div class="form-group">
+                <label for="username">Name</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Name"
+                  id="name_ip"
+                  name="name_ip"
+                />
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label>Email:</label>
-                </div>
-                <div class="col-md-9">
-                  <p id="email_show"></p>
-                </div>
+
+              <div class="form-group">
+                <label for="username">Email</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Email"
+                  id="email_ip"
+                  name="email_ip"
+                />
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label>Phone:</label>
-                </div>
-                <div class="col-md-9">
-                  <p id="phone_show"></p>
-                </div>
+
+              <div class="form-group">
+                <label for="password">Phone</label>
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Phone"
+                  id="phone_ip"
+                  name="phone_ip"
+                />
               </div>
-              <div class="row">
-                <div class="col-md-3">
-                  <label>Address:</label>
-                </div>
-                <div class="col-md-9">
-                  <p id="address_show"></p>
-                </div>
+
+              <div class="form-group">
+                <label for="password">Addesss</label>
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Addesss"
+                  id="addesss_ip"
+                  name="addesss_ip"
+                />
               </div>
             </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" onclick="update()">
+              Submit Form
+            </button>
           </div>
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h4 class="modal-title m-auto">Edit Profile</h4>
-        </div>
-        <!-- <form> -->
-        <div class=" modal-boy">
-          <div class="container">
-            <div class="form-group">
-              <label for="username">Name</label>
-              <input type="text" class="form-control" placeholder="Name" id="name_ip" name="name_ip" />
-            </div>
+    <div id="snackbar" class="bg-success"></div>
 
-            <div class="form-group">
-              <label for="username">Email</label>
-              <input type="text" class="form-control" placeholder="Email" id="email_ip" name="email_ip" />
-            </div>
-        
-            <div class="form-group">
-              <label for="password">Phone</label>
-              <input type="text" class="form-control" placeholder="Phone" id="phone_ip" name="phone_ip" />
-            </div>
-        
-            <div class="form-group">
-              <label for="password">Addesss</label>
-              <input class="form-control" type="text" placeholder="Addesss" id="addesss_ip" name="addesss_ip"/>
-            </div>
-          </div>
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-success" onclick="update()">
-            Submit Form
-          </button>
-        </div> 
-      </div>
-    </div>
-  </div>
-
-  <div id="snackbar" class="bg-success"></div>
-
-  <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
-  <script src="../../style/bootstrap/js/popper.min.js"></script>
-  <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
-  <script src="../assets/js/lodash.js"></script>
-  <script src="./main.js"></script>
-</body>
+    <script src="../../style/bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="../../style/bootstrap/js/popper.min.js"></script>
+    <script src="../../style/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../assets/js/lodash.js"></script>
+    <script src="./main.js"></script>
+  </body>
 </html>

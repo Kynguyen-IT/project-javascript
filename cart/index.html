@@ -26,7 +26,7 @@
           <div
             class="col-md-12 justify-content-between d-flex flex-column align-items-center"
           >
-            <span id="your_cart">You have 0 items in your cart</span>
+            <p class="mb-0">You have <span id="your-cart">0</span> items in your cart</p>
             <button
               id="clear_cart"
               type="button"
@@ -49,11 +49,7 @@
               </tr>
             </thead>
             <tbody class="list"></tbody>
-            <tfoot>
-              <tr id="cart_empty">
-                <td colspan="5">No thing in this cart.</td>
-              </tr>
-            </tfoot>
+            <tfoot></tfoot>
           </table>
         </div>
         <div class="container">
@@ -65,9 +61,10 @@
                   <button
                     onclick="checkout()"
                     type="button"
-                    class="btn btn-success"
+                    class="btn btn-success checkout-btn"
                   >
-                    Check Out
+                    <i class="fab fa-cc-visa"></i>
+                    proceed To Checkout
                   </button>
                   <!-- <button
                     data-toggle="modal"

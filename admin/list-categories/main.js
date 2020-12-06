@@ -7,6 +7,11 @@ var edit_success = document.getElementById("edit_success");
 var add_success = document.getElementById("add_success");
 var imgSrc;
 
+window.onload = function () {
+  checkAdmin();
+};
+
+
 function previewFile() {
   const file = imageFile.files[0];
   const reader = new FileReader();

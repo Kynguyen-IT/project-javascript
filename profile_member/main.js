@@ -6,7 +6,7 @@ var address_show = document.getElementById("address_show");
 var phone_show = document.getElementById("phone_show");
 var userLogin = JSON.parse(localStorage.getItem("userLogin"));
 // file input
-var imageFile = document.getElementById("file");
+var imageFile = document.getElementById("avatarInp");
 // form data
 var name_ip = document.getElementById("name_ip");
 var email_ip = document.getElementById("email_ip");
@@ -29,38 +29,70 @@ const showAlert = (message, status) => {
   }, 3000);
 };
 
-function previewFile() {
-  const file = imageFile.files[0];
-  const reader = new FileReader();
+$("#avatarInp").change(function () {
+  $("#avatarForm").submit();
+});
 
-  reader.addEventListener(
-    "load",
-    function () {
-      imgSrc = reader.result;
-      image_member.style.backgroundImage = `url(${reader.result})`;
-
-      console.log(userLogin.id);
+const avatarSubmit = (e) => {
+  e.preventDefault();
+  console.log(e);
+  var formData = new FormData();
+  formData.append("avatar", imageFile.files[0]);
+  fetch(`https://shynn.works/foody/upload-image`, {
+    method: "POST",
+    body: formData,
+  })
+    .then((res) => res.json())
+    .then((res) => {
       fetch(`https://shynn.works/foody/users/${userLogin.id}`, {
         method: "PATCH",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
         },
         body: JSON.stringify({
-          image: imgSrc,
+          image: `https://shynn.works/foody/images/${res.image}`,
         }),
       })
         .then((response) => response.json())
         .then((responseJson) => {
           localStorage.setItem("userLogin", JSON.stringify(responseJson));
+          displayData();
         });
-    },
-    false
-  );
+    });
+};
 
-  if (file) {
-    reader.readAsDataURL(file);
-  }
-}
+// function previewFile() {
+//   const file = imageFile.files[0];
+//   const reader = new FileReader();
+
+//   reader.addEventListener(
+//     "load",
+//     function () {
+//       imgSrc = reader.result;
+//       image_member.style.backgroundImage = `url(${reader.result})`;
+
+//       console.log(userLogin.id);
+//       fetch(`https://shynn.works/foody/users/${userLogin.id}`, {
+//         method: "PATCH",
+//         headers: {
+//           "Content-type": "application/json; charset=UTF-8",
+//         },
+//         body: JSON.stringify({
+//           image: imgSrc,
+//         }),
+//       })
+//         .then((response) => response.json())
+//         .then((responseJson) => {
+//           localStorage.setItem("userLogin", JSON.stringify(responseJson));
+//         });
+//     },
+//     false
+//   );
+
+//   if (file) {
+//     reader.readAsDataURL(file);
+//   }
+// }
 
 function displayData() {
   fetch(`https://shynn.works/foody/users/${userLogin.id}`)

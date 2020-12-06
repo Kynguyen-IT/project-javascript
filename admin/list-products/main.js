@@ -14,7 +14,9 @@ var priceAdd = document.getElementById('addPrice')
 var imageAdd = document.getElementById('imageAdd') 
 var select_cate_add = document.getElementById('select_cate_add')
 
-
+window.onload = function () {
+  checkAdmin();
+};
 
 function previewFile() {
   const file = imageFile.files[0];

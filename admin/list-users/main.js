@@ -7,6 +7,11 @@ var passwordAdd = document.getElementById('addPassword')
 var accessAdminAdd = document.getElementById('addMakeAdmin')
 var a;
 
+window.onload = function () {
+  checkAdmin();
+};
+
+
 function displayTable() {
     fetch(`https://shynn.works/foody/users`)
       .then((res) => res.json())
@@ -22,9 +27,9 @@ function displayTable() {
             }    
       item = `
       <tr>
-        <td class="text-capitalize">${user.email}</td>
-        <td class="text-capitalize">${user.password}</td>
-        <td class="text-capitalize">${a}<td>
+        <td>${user.email}</td>
+        <td>${user.password}</td>
+        <td>${a}<td>
          <button class="btn text-success" data-toggle="modal" onclick= "openEditUser('${user.id}')" data-target="#editModal" id="openEditModal${user.id}"><i class="far fa-edit"></i></button>
          /
         <button class="btn text-danger" onclick = "deleteProduct('${user.id}')" id="delete${user.id}"><i class="fa fa-trash"></i></button> 

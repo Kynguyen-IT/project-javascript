@@ -24,11 +24,11 @@ function getTotal() {
   return total;
 }
 
-function showItems() {
-  if (productNumber >= 0) {
-    cart_empty.classList.add("cart_empty");
-  }
-}
+// function showItems() {
+//   if (productNumber >= 0) {
+//     cart_empty.classList.add("cart_empty");
+//   }
+// }
 
 const showAlert = (message, status) => {
   var x = document.getElementById("snackbar");
@@ -51,9 +51,10 @@ function getQuantity() {
   if (cartItems) {
     cartItems.map((item) => (quantity += item.quantity));
   }
-  document.getElementById("your_cart").textContent = `You have ${
-    quantity || 0
-  } items in your cart`;
+  // document.getElementById("your_cart").textContent = `You have ${
+  //   quantity || 0
+  // } items in your cart`;
+  document.getElementById("your-cart").innerHTML = quantity || 0;
   localStorage.setItem("cartNumber", quantity);
   return quantity;
 }
@@ -96,7 +97,8 @@ function changeQuantity(method, id) {
 function clearCart() {
   localStorage.removeItem("cart");
   localStorage.removeItem("cartNumber");
-  displayCartItem();
+  document.getElementById("your-cart").innerHTML = 0;
+  displayCartItem()
 }
 
 function displayCartItem() {
@@ -105,9 +107,10 @@ function displayCartItem() {
   cartItems = JSON.parse(cartItems) || {};
   cartItems = Object.values(cartItems);
   let row = "";
-  cartItems.map((item) => {
-    let image = `img-${item.id}`;
-    row = `<tr>
+  if (cartItems.length > 0) {
+    cartItems.map((item) => {
+      let image = `img-${item.id}`;
+      row = `<tr>
                 <td class="images">
                     <div class="box_img ${image}"   ></div>
                 </td>
@@ -127,20 +130,25 @@ function displayCartItem() {
                 <td>${item.price * item.quantity}đ</td>
               </tr>
               `;
-    list.innerHTML += row;
-    document.querySelector(
-      `.${image}`
-    ).style.backgroundImage = `url(${item.image})`;
-    document
-      .getElementById("sub-" + item.id)
-      .setAttribute("onclick", `changeQuantity(${SUB},"${item.id}")`);
-    document
-      .getElementById("add-" + item.id)
-      .setAttribute("onclick", `changeQuantity(${ADD},"${item.id}")`);
-    getQuantity();
-    getTotal();
-    showItems();
-  });
+      list.innerHTML += row;
+      document.querySelector(
+        `.${image}`
+      ).style.backgroundImage = `url(${item.image})`;
+      document
+        .getElementById("sub-" + item.id)
+        .setAttribute("onclick", `changeQuantity(${SUB},"${item.id}")`);
+      document
+        .getElementById("add-" + item.id)
+        .setAttribute("onclick", `changeQuantity(${ADD},"${item.id}")`);
+      getQuantity();
+      getTotal();
+    });
+  } else {
+    document.querySelector(".checkout-btn").disabled = true;
+    document.querySelector(".clear_cart").disabled = true;
+    list.innerHTML =
+      "<tr><td colspan='5'><h3 class='text-center'>No thing in your cart</h3></td></tr>";
+  }
 }
 
 const openCheckout = () => {
@@ -184,6 +192,10 @@ const checkout = () => {
     status: "pending",
     cart: cartItems,
   };
+  if (!user.phone) {
+    return showAlert("Update your mobile phone in profile page first", "error");
+  }
+  // post(`https://shynn.works/foody/create-session`, shipping)
   post(`https://shynn.works/foody/create-session`, shipping)
     .then((res) => res.json())
     .then((session) => {
@@ -193,7 +205,6 @@ const checkout = () => {
       if (result.error) {
         showAlert(result.error.message, "error");
       }
-      console.log(result);
     })
     .catch((err) => {
       console.error("Error: ", err);
