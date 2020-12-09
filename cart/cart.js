@@ -62,12 +62,12 @@ function getQuantity() {
 function changeQuantity(method, id) {
   let newCart;
   if (method == SUB) {
-    if (cartItems.length === 1) {
+    if (cartItems.length === 1 && cartItems[0].quantity === 1) {
       localStorage.setItem("cartNumber", 0);
       document.getElementById("total").textContent = 0;
-      document.getElementById(
-        "your_cart"
-      ).textContent = `You have 0 item in your cart`;
+      document.getElementById("your-cart").innerHTML = 0;
+      list.innerHTML =
+        "<tr><td colspan='5'><h3 class='text-center'>No thing in your cart</h3></td></tr>";
     }
     newCart = cartItems.map((item) => {
       if (item.id == id) {
@@ -136,10 +136,10 @@ function displayCartItem() {
       ).style.backgroundImage = `url(${item.image})`;
       document
         .getElementById("sub-" + item.id)
-        .setAttribute("onclick", `changeQuantity(${SUB},"${item.id}")`);
+        .setAttribute("onclick", `changeQuantity("${SUB}","${item.id}")`);
       document
         .getElementById("add-" + item.id)
-        .setAttribute("onclick", `changeQuantity(${ADD},"${item.id}")`);
+        .setAttribute("onclick", `changeQuantity("${ADD}","${item.id}")`);
       getQuantity();
       getTotal();
     });
