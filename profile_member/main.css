@@ -259,3 +259,7 @@ div.col-sm-6.box-img {
     opacity: 0;
   }
 }
+
+.font-12 {
+  font-size: 12px !important;
+}

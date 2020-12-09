@@ -32,10 +32,10 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-4">
             <div class="profile-head">
               <h5 id="name_member"></h5>
-              <p class="proile-rating">RANKINGS : <span>8/10</span></p>
+              <p class="proile-role">Member</p>
               <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item">
                   <a
@@ -52,7 +52,15 @@
               </ul>
             </div>
           </div>
-          <div class="col-md-2">
+          <div class="col-md-4 d-flex">
+            <button
+              class="profile-edit-btn mr-2 font-12"
+              data-toggle="modal"
+              data-target="#editPassword"
+              onclick="openEditPassword()"
+            >
+              Change Password
+            </button>
             <button
               class="profile-edit-btn"
               data-toggle="modal"
@@ -182,6 +190,62 @@
           </div>
           <div class="modal-footer">
             <button class="btn btn-success" onclick="update()">
+              Submit Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="editPassword"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="editModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-md" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title m-auto">Edit Password</h4>
+          </div>
+          <!-- <form> -->
+          <div class="modal-boy">
+            <div class="container">
+              <div class="form-group">
+                <label for="old_pass">Old Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Old Password"
+                  id="old_pass"
+                  name="old_pass"
+                />
+              </div>
+              <div class="form-group">
+                <label for="new_pass">New Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="New Password"
+                  id="new_pass"
+                  name="new_pass"
+                />
+              </div>
+              <div class="form-group">
+                <label for="renew_pass">Re-enter New Password</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  placeholder="Re-enter New Password"
+                  id="renew_pass"
+                  name="renew_pass"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button class="btn btn-success" onclick="updatePassword()">
               Submit Form
             </button>
           </div>

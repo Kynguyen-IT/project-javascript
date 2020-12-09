@@ -13,6 +13,8 @@ var email_ip = document.getElementById("email_ip");
 var phone_ip = document.getElementById("phone_ip");
 var address_ip = document.getElementById("addesss_ip");
 
+let userData = {};
+
 const showAlert = (message, status) => {
   var x = document.getElementById("snackbar");
   x.innerHTML = message;
@@ -105,6 +107,8 @@ function displayData() {
           "url(https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSteItzPyeDKBxyWiOA8xrPZXIlxOYv1b1VVg&usqp=CAU)";
       }
 
+      userData = user;
+
       if (
         user["name"] != undefined ||
         user["phone"] != undefined ||
@@ -187,5 +191,43 @@ function update() {
     showAlert("Error when update your information!!!", "error");
   }
 }
+
+const openEditPassword = () => {
+  // console.log(userData);
+};
+
+const updatePassword = () => {
+  const old_pass = document.getElementById("old_pass");
+  const new_pass = document.getElementById("new_pass");
+  const renew_pass = document.getElementById("renew_pass");
+
+  if (new_pass.value === "" && renew_pass.value === "") {
+    alert("Input must not empty!");
+  } else if (userData && old_pass.value === userData.password) {
+    if (new_pass.value === renew_pass.value) {
+      const newData = {
+        password: new_pass.value,
+        etpassword: renew_pass.value,
+      };
+      fetch(`https://shynn.works/foody/users/${userData.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+        body: JSON.stringify(newData),
+      }).then((res) => {
+        if (res.status === 200) {
+          alert("Password Changed!");
+          $("#editPassword").modal("hide");
+          old_pass.value = "";
+          new_pass.value = "";
+          renew_pass.value = ""
+        }
+      });
+    }
+  } else {
+    console.log("WRong pass");
+  }
+};
 
 displayData();
