@@ -40,10 +40,12 @@ function displayTable() {
         <td class="text-capitalize">${order.phone ? order.phone : ""}</td>
         <td class="text-capitalize">${order.date}</td>
         <td class="text-capitalize">${order.status}</td>
-        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder${order.id
-          }" ><i class="fas fa-car"></i></button> </td>
-        <td><button class="btn text-danger" onclick = "deleteOrder('${order.id
-          }')" id="delete"><i class="fa fa-trash"></i></button></td> 
+        <td><button class="btn text-danger" data-toggle="modal" data-target="#orderModal" id="processedOrder${
+          order.id
+        }" ><i class="fas fa-car"></i></button> </td>
+        <td><button class="btn text-danger" onclick = "deleteOrder('${
+          order.id
+        }')" id="delete"><i class="fa fa-trash"></i></button></td> 
         </tr>  
       `;
         list.innerHTML += item;
@@ -55,6 +57,7 @@ function displayTable() {
 }
 
 function showProcessedOrder(id) {
+  cartList.innerHTML = ""
   fetch(`https://shynn.works/foody/orders/${id}`)
     .then((res) => res.json())
     .then((data) => {
@@ -66,17 +69,17 @@ function showProcessedOrder(id) {
       statusT.innerHTML = data.status;
 
       let row = "";
-      data.cart.map((item) => {
+      data && data.cart.map((item) => {
         row = `
           <li
           class="list-group-item d-flex justify-content-between text-capitalize"
           >
               <span>${item.quantity} * ${item.name}</span>
-              <span>${item.quantity * Number(item.price)}đ</span
+              <span>${item.price}đ</span
               >
           </li>
           `;
-        cartList.innerHTML = row;
+        cartList.innerHTML += row;
       });
       document
         .getElementById("processed")
